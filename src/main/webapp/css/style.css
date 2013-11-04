@@ -1,0 +1,29 @@
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+
+body {
+	font-family: "Nanum Gothic", Arial, sans-serif;
+	background-color: #f2f2f2;
+	color: #333333;
+}
+
+/*********************** 미디어 쿼리 시작 *************************/
+/* Large desktop */
+@media (min-width: 1200px) {
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+}
+/*********************** 미디어 쿼리 끝 *************************/
+
+/*************************** IE 7,8 버전 스타일시트 시작 ******************************/
+
+/*************************** IE 7,8 버전 스타일시트 종료 ******************************/

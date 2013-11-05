@@ -6,11 +6,11 @@ body {
 	color:#57A957;
 }
 
-.btn-wrapper{
+.btn {
   text-align: left;
 }
 
-.hero-unit-wrapper {
+.hero-unit {
   padding: 120px;
   margin-bottom: 30px;
   font-size: 18px;
@@ -23,7 +23,7 @@ body {
           border-radius: 6px;
 }
 
-.navbar-inverse .navbar-inner-wrapper{
+.navbar-inverse .navbar-inner{
   background-color: #57A957;
   background-image: -moz-linear-gradient(top, #222222, #111111);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#57A957), to(#57A957));
@@ -35,7 +35,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
 }
 
-.navbar-inverse .brand-wrapper {
+.navbar-inverse .brand {
   color: #ffffff;
 }
 

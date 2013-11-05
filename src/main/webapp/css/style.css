@@ -6,12 +6,8 @@ body {
 	background-color:#57A957;
 	color:#57A957;
 }
-/* forgot Email 박스 정렬 */
-.btn {
-  text-align: left;
-}
 
-/* 가운데 컨테이너 박스 */
+/* 공통 가운데 컨테이너 박스 */
 .hero-unit {
   padding: 120px;
   margin-bottom: 30px;
@@ -38,11 +34,12 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
 }
 
-/* 왼쪽 상단 메뉴바 */
+/* 왼쪽 상단 메뉴바 클릭 전 */
 .navbar-inverse .brand {
   color: #ffffff;
 }
 
+/* 왼쪽 상단 메뉴바 클릭 후 */
 .navbar-inverse .brand:hover,
 .navbar-inverse .nav > li > a:hover,
 .navbar-inverse .brand:focus,
@@ -50,6 +47,7 @@ body {
   color: #387038;
 }
 
+/* 오른쪽 상단 버튼 효과 */
 .btn-custom {
   background-color: hsl(0, 0%, 79%) !important;
   background-repeat: repeat-x;
@@ -67,6 +65,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* forgot Email 박스 정렬 */
+.btn {
+  text-align: left;
+}
+
+/* forgot Submit 버튼 효과 */
 .btn-custom2 {
   background-color: hsl(195, 60%, 35%) !important;
   background-repeat: repeat-x;

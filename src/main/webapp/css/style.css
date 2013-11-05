@@ -1,0 +1,85 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/* 공통 Body */
+body {
+	font-family:"Nanum Gothic", Arial, sans-serif;
+	background-color:#57A957;
+	color:#57A957;
+}
+/* forgot Email 박스 정렬 */
+.btn {
+  text-align: left;
+}
+
+/* 가운데 컨테이너 박스 */
+.hero-unit {
+  padding: 120px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: inherit;
+  background-color: #ffffff;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+/* 배경 컬러 */
+.navbar-inverse .navbar-inner{
+  background-color: #57A957;
+  background-image: -moz-linear-gradient(top, #222222, #111111);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#57A957), to(#57A957));
+  background-image: -webkit-linear-gradient(top, #57A957, #57A957);
+  background-image: -o-linear-gradient(top, #222222, #111111);
+  background-image: linear-gradient(to bottom, #57A957, #57A957);
+  background-repeat: repeat-x;
+  border-color: #57A957;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+}
+
+/* 왼쪽 상단 메뉴바 */
+.navbar-inverse .brand {
+  color: #ffffff;
+}
+
+.navbar-inverse .brand:hover,
+.navbar-inverse .nav > li > a:hover,
+.navbar-inverse .brand:focus,
+.navbar-inverse .nav > li > a:focus {
+  color: #387038;
+}
+
+.btn-custom {
+  background-color: hsl(0, 0%, 79%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#134134134", endColorstr="#c9c9c9");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#134134134), to(#c9c9c9));
+  background-image: -moz-linear-gradient(top, #134134134, #c9c9c9);
+  background-image: -ms-linear-gradient(top, #134134134, #c9c9c9);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #134134134), color-stop(100%, #c9c9c9));
+  background-image: -webkit-linear-gradient(top, #134134134, #c9c9c9);
+  background-image: -o-linear-gradient(top, #134134134, #c9c9c9);
+  background-image: linear-gradient(#134134134, #c9c9c9);
+  border-color: #c9c9c9 #c9c9c9 hsl(0, 0%, 68.5%);
+  color: #333 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.69);
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn-custom2 {
+  background-color: hsl(195, 60%, 35%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2d95b7", endColorstr="#23748e");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#2d95b7), to(#23748e));
+  background-image: -moz-linear-gradient(top, #2d95b7, #23748e);
+  background-image: -ms-linear-gradient(top, #2d95b7, #23748e);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2d95b7), color-stop(100%, #23748e));
+  background-image: -webkit-linear-gradient(top, #2d95b7, #23748e);
+  background-image: -o-linear-gradient(top, #2d95b7, #23748e);
+  background-image: linear-gradient(#2d95b7, #23748e);
+  border-color: #23748e #23748e hsl(195, 60%, 32.5%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16);
+  -webkit-font-smoothing: antialiased;
+}

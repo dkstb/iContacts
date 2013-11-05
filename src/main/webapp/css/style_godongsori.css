@@ -6,6 +6,7 @@ body {
 	color: #333333;
 }
 
+/*********************** iContacts 시작 ***************************/
 .navbar-inner {
 	min-height: 40px;
 	padding-left: 20px;
@@ -72,9 +73,23 @@ footer {
 	border: 1px solid #d4d4d4;
 }
 
-.span3, .span9 {
-	padding-top: 60px;
+.contacts-main {
+	margin-top: 60px;
 }
+
+thead {
+	background-color: #ddd;
+}
+.table-hover tbody tr:hover>td,.table-hover tbody tr:hover>th {
+	background-color: #FFFFFF;
+}
+
+.contacts-main .pull-right {
+	margin-left: 10px;
+}
+
+/*********************** iContacts 끝 ***************************/
+
 /*********************** 미디어 쿼리 시작 *************************/
 /* Large desktop */
 @media (min-width: 1200px) {

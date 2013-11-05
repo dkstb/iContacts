@@ -18,7 +18,7 @@
 	media="screen" title="no title" charset="utf-8" />
 <link rel="stylesheet" href="../css/font-awesome.css" type="text/css"
 	media="screen" title="no title" charset="utf-8" />
-<link rel="stylesheet" href="../css/style.css" type="text/css"
+<link rel="stylesheet" href="../css/style_godongsori.css" type="text/css"
 	media="screen" title="no title" charset="utf-8" />
 
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -74,37 +74,67 @@
 	</div>
 
 	<div class="container">
-		<div class="row">
+		<div class="row contacts-main">
 			<div class="span3 contacts-list">
 				<legend>All Contacts</legend>
 				<form class="form-search">
 				    <input type="text" class="input-medium search-query" placeholder="Search">
 				</form>
-				<table class="table table-striped table-bordered table-hover">
-					<thead>
-						<tr>
-							<th>A</th>
-						</tr>
+				<table class="table table-bordered table-hover">
+					<thead class="table-condensed">
+						<tr><th>A</th></tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>A-Yo Wina</td>
-						</tr>
+						<tr><td>A-Yo Wina</td></tr>
 					</tbody>
-					<thead>
-						<tr>
-							<th>B</th>
-						</tr>
+					<thead class="table-condensed">
+						<tr><th>B</th></tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Black Orange</td>
-						</tr>
+						<tr><td>Black Orange</td></tr>
+						<tr><td>Bit Computer</td></tr>
+						<tr><td>BMW</td></tr>
+						<tr><td>Bubu Company</td></tr>
+					</tbody>
+					<thead class="table-condensed">
+						<tr><th>F</th></tr>
+					</thead>
+					<tbody>
+						<tr><td>Fabric</td></tr>
+						<tr><td>Fish&Chips</td></tr>
+						<tr><td>FM Radio</td></tr>
+						<tr><td>Fresh HyunBin</td></tr>
 					</tbody>
 				</table>
 			</div>
 			<div class="span9 contact">
-				상세 연락처
+				<legend>Contact</legend>
+				<div class="row">
+					<div class="span2">
+						<img src="img/wina_img.png" class="img-polaroid">
+						<!-- File Button --> 
+						<div class="control-group">
+						  <div class="controls">
+						    <input id="filebutton" name="filebutton" class="input-file" type="file">
+						  </div>
+						</div>
+					</div>
+					<div class="span7">
+					    <input type="text" placeholder="Name" class="span7" required>
+					    <input type="text" placeholder="Mobile Phone" class="span7">
+					    <input type="text" placeholder="Work" class="span7">
+					    <input type="text" placeholder="Email" class="span7">
+					</div>
+				</div>
+				<div class="row">
+					<div class="span9">
+						<input type="text" placeholder="Homepage" class="span9">
+					    <input type="text" placeholder="Address" class="span9">
+					    <textarea rows="6" placeholder="Memo" class="span9"></textarea>
+					    <button type="button" class="btn btn-danger pull-right">Delete</button>
+					    <button type="button" class="btn btn-info pull-right">Save</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

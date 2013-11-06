@@ -18,7 +18,9 @@
 	media="screen" title="no title" charset="utf-8" />
 <link rel="stylesheet" href="../css/font-awesome.css" type="text/css"
 	media="screen" title="no title" charset="utf-8" />
-<link rel="stylesheet" href="../css/style_godongsori.css" type="text/css"
+<link rel="stylesheet" href="../css/style.css" type="text/css"
+	media="screen" title="no title" charset="utf-8" />
+<link rel="stylesheet" href="css/icontacts_style.css" type="text/css"
 	media="screen" title="no title" charset="utf-8" />
 
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -33,106 +35,86 @@
 
 </head>
 
-<body>
+<body class="contacts-main">
 
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<button type="button" class="btn btn-navbar" data-toggle="collapse"
-					data-target=".nav-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="brand" href="#"><i class="icon-group"></i> iContacts</a>
-				<div class="nav-collapse collapse">
-					<ul class="nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#contact">Contact</a></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li class="divider"></li>
-								<li class="nav-header">Nav header</li>
-								<li><a href="#">Separated link</a></li>
-								<li><a href="#">One more separated link</a></li>
-							</ul>
-						</li>
-					</ul>
-					<form class="navbar-form pull-right">
-						<input class="span2" type="text" placeholder="Email"> <input
-							class="span2" type="password" placeholder="Password">
-						<button type="submit" class="btn">Sign in</button>
-					</form>
-				</div>
-				<!--/.nav-collapse -->
-			</div>
-		</div>
-	</div>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand brand" href="#">iContacts</a>
+          <a class="brand brand" href="#">Tour</a>
+          <a class="brand brand" href="#">Blog</a>
+            <form class="navbar-form pull-right">
+              <button type="submit" class="btn btn-custom"><i class="fa fa-user fa-fw"></i> Sign up</button>
+              <button type="submit" class="btn btn-custom">Log in</button>
+            </form>
+        </div>
+      </div>
+    </div>
 
 	<div class="container">
-		<div class="row contacts-main">
-			<div class="span3 contacts-list">
-				<legend>All Contacts</legend>
-				<form class="form-search">
-				    <input type="text" class="input-medium search-query" placeholder="Search">
-				</form>
-				<table class="table table-bordered table-hover">
-					<thead class="table-condensed">
-						<tr><th>A</th></tr>
-					</thead>
-					<tbody>
-						<tr><td>A-Yo Wina</td></tr>
-					</tbody>
-					<thead class="table-condensed">
-						<tr><th>B</th></tr>
-					</thead>
-					<tbody>
-						<tr><td>Black Orange</td></tr>
-						<tr><td>Bit Computer</td></tr>
-						<tr><td>BMW</td></tr>
-						<tr><td>Bubu Company</td></tr>
-					</tbody>
-					<thead class="table-condensed">
-						<tr><th>F</th></tr>
-					</thead>
-					<tbody>
-						<tr><td>Fabric</td></tr>
-						<tr><td>Fish&Chips</td></tr>
-						<tr><td>FM Radio</td></tr>
-						<tr><td>Fresh HyunBin</td></tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="span9 contact">
-				<legend>Contact</legend>
+		<div class="row">
+			<div class="span12">
 				<div class="row">
-					<div class="span2">
-						<img src="img/wina_img.png" class="img-polaroid">
-						<!-- File Button --> 
-						<div class="control-group">
-						  <div class="controls">
-						    <input id="filebutton" name="filebutton" class="input-file" type="file">
-						  </div>
+					<div class="span3 contacts-list">
+						<legend>All Contacts</legend>
+						<form class="form-search">
+						    <input type="text" class="input-medium search-query" placeholder="Search">
+						</form>
+						<table class="table table-bordered table-hover">
+							<thead class="table-condensed">
+								<tr><th>A</th></tr>
+							</thead>
+							<tbody>
+								<tr><td>A-Yo Wina</td></tr>
+							</tbody>
+							<thead class="table-condensed">
+								<tr><th>B</th></tr>
+							</thead>
+							<tbody>
+								<tr><td>Black Orange</td></tr>
+								<tr><td>Bit Computer</td></tr>
+								<tr><td>BMW</td></tr>
+								<tr><td>Bubu Company</td></tr>
+							</tbody>
+							<thead class="table-condensed">
+								<tr><th>F</th></tr>
+							</thead>
+							<tbody>
+								<tr><td>Fabric</td></tr>
+								<tr><td>Fish&Chips</td></tr>
+								<tr><td>FM Radio</td></tr>
+								<tr><td>Fresh HyunBin</td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="span9 contact">
+						<legend>Contact</legend>
+						<div class="row">
+							<div class="span2">
+								<img src="img/wina_img.png" class="img-polaroid">
+								<!-- File Button --> 
+								<div class="control-group">
+								  <div class="controls">
+								    <input id="filebutton" name="filebutton" class="input-file" type="file">
+								  </div>
+								</div>
+							</div>
+							<div class="span7">
+							    <input type="text" placeholder="Name" class="span7" required>
+							    <input type="text" placeholder="Mobile Phone" class="span7">
+							    <input type="text" placeholder="Work" class="span7">
+							    <input type="text" placeholder="Email" class="span7">
+							</div>
 						</div>
-					</div>
-					<div class="span7">
-					    <input type="text" placeholder="Name" class="span7" required>
-					    <input type="text" placeholder="Mobile Phone" class="span7">
-					    <input type="text" placeholder="Work" class="span7">
-					    <input type="text" placeholder="Email" class="span7">
-					</div>
-				</div>
-				<div class="row">
-					<div class="span9">
-						<input type="text" placeholder="Homepage" class="span9">
-					    <input type="text" placeholder="Address" class="span9">
-					    <textarea rows="6" placeholder="Memo" class="span9"></textarea>
-					    <button type="button" class="btn btn-danger pull-right">Delete</button>
-					    <button type="button" class="btn btn-info pull-right">Save</button>
+						<div class="row">
+							<div class="span9">
+								<input type="text" placeholder="Homepage" class="span9">
+							    <input type="text" placeholder="Address" class="span9">
+							    <textarea rows="6" placeholder="Memo" class="span9"></textarea>
+							    <button type="button" class="btn btn-danger pull-right">Delete</button>
+							    <button type="button" class="btn btn-info pull-right">Save</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -140,8 +122,8 @@
 	</div>
 	<!-- /container -->
 
-<footer class="navbar navbar-fixed-bottom">
-	&copy; iContacts 2013
-</footer>
+	<footer class="navbar navbar-fixed-bottom">
+     	
+    </footer>
 </body>
 </html>

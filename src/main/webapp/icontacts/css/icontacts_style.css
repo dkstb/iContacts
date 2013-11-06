@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+.contacts-main {
+	background-color: #ffffff;
+	margin-top: 60px;
+	margin-bottom: 50px;
+}
+
+thead {
+	background-color: #ddd;
+}
+.table-hover tbody tr:hover>td,.table-hover tbody tr:hover>th {
+	background-color: #eee;
+}
+
+.contacts-main .pull-right {
+	margin-left: 10px;
+}
+
+footer {
+	height: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color:#57A957;
+}

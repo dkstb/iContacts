@@ -15,16 +15,15 @@ public class MyBatisUsersTest {
 	public void test() throws Exception {
 		ApplicationContext context = new FileSystemXmlApplicationContext(
 				"src/main/webapp/WEB-INF/mybatis/mybatis-context.xml");
-		UsersService usersService = (UsersService) context
-				.getBean("usersServiceImpl");
+		UsersService usersService = (UsersService) context.getBean("usersServiceImpl");
 
 		// 1. UsersService.insertUsers Test
 
-		// Test Users instance »ı¼º
+		// Test Users instance ìƒì„±
 		Users users = new Users();
 		users.setEmail("win@hanmail.net");
 		users.setPassword("1234");
-		users.setName("±èÀ§³ª");
+		users.setName("ê¹€ìœ„ë‚˜");
 
 		assertNotNull(usersService.insertUsers(users));
 	}

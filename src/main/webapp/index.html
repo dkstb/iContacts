@@ -9,11 +9,9 @@
 		<meta name="author" content="Dynamic Deer">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-		<link rel="stylesheet" href="css/bootstrap.css" type="textcss/css" media="screen" title="notitle" charset="utf-8"/>
-		<link rel="stylesheet" href="css/font-awesome.css" type="textcss/css" media="screen" title="notitle" charset="utf-8"/>
-		<link rel="stylesheet" href="css/style.css" type="textcss/css" media="screen" title="notitle" charset="utf-8"/>
+		<link rel="stylesheet" href="resources/css/bootstrap.css" type="textcss/css" media="screen" title="notitle" charset="utf-8"/>
+		<link rel="stylesheet" href="resources/css/font-awesome.css" type="textcss/css" media="screen" title="notitle" charset="utf-8"/>
+		<link rel="stylesheet" href="resources/css/style.css" type="textcss/css" media="screen" title="notitle" charset="utf-8"/>
 		<!--[if IE7]>
 		<link rel="stylesheet" href="css/font-awesome-ie7.min.css">
 		<![endif]-->
@@ -21,7 +19,7 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script src="js/bootstrap.js"></script>
+		<script src="resources/js/bootstrap.js"></script>
 	</head>
 	<body class="index">
 		<div class="navbar navbar-inverse navbar-fixed-top">
@@ -31,12 +29,8 @@
 					<a class="brand" href="#">Tour</a>
 					<a class="brand" href="#">Blog</a>
 					<form class="navbar-form pull-right">
-						<button type="submit" class="btn btn-custom">
-							<i class="fa fa-user fa-fw"></i> Sign up
-						</button>
-						<button type="submit" class="btn btn-custom">
-							Log in
-						</button>
+						<a class="btn btn-custom" href="user/sign_up.html">Sign up</a>
+						<a class="btn btn-custom dropdown-toggle" data-toggle="dropdown" href="#">Log in</a>
 					</form>
 				</div>
 			</div>

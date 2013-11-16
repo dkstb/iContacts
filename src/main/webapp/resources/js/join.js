@@ -5,7 +5,7 @@ $(document).ready(function(){
                 alert('email' + $('#input_email').val());
                 alert('password' + $('#input_password').val());
                 
-                // È¸¿ø°¡ÀÔ Á¤º¸ ¼­¹ö Àü¼Û
+                // ajax ì „ì†¡
                 $.ajax('/bitschool/ajax/insertUsers.contact', {
                         type: 'POST',
                         dataType: 'json',
@@ -16,9 +16,9 @@ $(document).ready(function(){
                         },                                        
                         success:function(data){
                                 if(data.result=='success'){
-                                        alert('È¸¿ø°¡ÀÔÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.');
+                                        alert('íšŒì›ê°€ì…ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.');
                                 } else {
-                                        alert('È¸¿ø°¡ÀÔ¿¡ ½ÇÆĞÇß½À´Ï´Ù.');
+                                        alert('íšŒì›ê°€ì…ì´ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.');
                                 }
                         }
                 });

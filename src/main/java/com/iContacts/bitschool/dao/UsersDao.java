@@ -7,6 +7,9 @@ public interface UsersDao {
     public Users getUsers(Users users) throws Exception;
     public int updateUsers(Users users) throws Exception;
     public int deleteUsers(Users users) throws Exception;
-    // ÀÌ¸ÞÀÏ ¾ÆÀÌµð·Î¸¸ À¯Àú Ã¼Å©
+    // ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
     public Users checkUsers(Users users) throws Exception;
+    
+    // í…ŒìŠ¤íŠ¸ìš© ì „ì²´ ìœ ì € ì‚­ì œ
+    public int deleteAllUsers() throws Exception;
 }

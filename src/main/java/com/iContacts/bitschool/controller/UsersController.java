@@ -127,44 +127,40 @@ public class UsersController {
 //                return map;
 //        }
 //        
-//        //�α���(���̵� ���� üũ ����)
-//        @RequestMapping("/loginUsers.do")
-//        @ResponseBody
-//        public Object loginUsers(@ModelAttribute("users") Users users ,
-//                        HttpSession session) throws Exception {
-//                
-//                System.out.println("db��:"+users);
-//                HashMap<String, Object> map= new HashMap<String,Object>();
-//
-//                Users dbUsers = new Users();
-//                dbUsers = (Users)usersService.getUsers(users);
-//                System.out.println("db��:"+dbUsers);
-//                
-//                if(dbUsers == null) {
-//                        map.put("result", "noInformation");
-//                        return map;
-//                }
-//                if(users.getEmailId().equals(dbUsers.getEmailId()) 
-//                                && users.getPassword().equals(dbUsers.getPassword())) {
-//                        if (dbUsers.getGState().equals("F")) {
-//                                map.put("result", "success");
-//                        } else {
-//                                map.put("result", "guide");
-//                        }
-//                        // ���ǿ� ������ �̸��� ����ѹ��� ����
-//                        Users newUsers = new Users();
-//                        newUsers.setName(dbUsers.getName());
-//                        newUsers.setUserNo(dbUsers.getUserNo());
-//                        session.setAttribute("users", newUsers);
-//                        map.put("users", newUsers);
-//                        
-//                        System.out.println("session users����:"+session.getAttribute("users"));
-//                } else {
-//                        map.put("result", "fail");
-//                }
-//                return map;
-//        }
-//        
+        //로그인 컨트롤러
+        @RequestMapping("/loginUsers.do")
+        @ResponseBody
+        public Object loginUsers(@ModelAttribute("users") Users users ,
+                        HttpSession session) throws Exception {
+                
+                System.out.println("db 전:"+users);
+                HashMap<String, Object> map= new HashMap<String,Object>();
+
+                Users dbUsers = new Users();
+                dbUsers = (Users)usersService.getUsers(users);
+                System.out.println("db 후:"+dbUsers);
+                
+                if(dbUsers == null) {
+                        map.put("result", "noInformation");
+                        return map;
+                }
+                if(users.getEmail().equals(dbUsers.getEmail()) 
+                                && users.getPassword().equals(dbUsers.getPassword())) {
+                	map.put("result", "success");
+                	
+                	// 세션에 메일 주소만 유지
+                    Users sessionUser = new Users();
+                    sessionUser.setEmail(dbUsers.getEmail());
+                    session.setAttribute("users", sessionUser);
+                    map.put("users", sessionUser);
+                    
+                    System.out.println("session users 정보 : "+session.getAttribute("users"));
+                } else {
+                	map.put("result", "fail");
+                }
+                return map;
+        }
+        
 //        //�α׾ƿ�
 //        @RequestMapping("/logoutUsers.do")
 //        @ResponseBody

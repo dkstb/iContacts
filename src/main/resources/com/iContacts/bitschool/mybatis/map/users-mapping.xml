@@ -50,5 +50,10 @@
 		FROM USERS
 		WHERE email_id=#emailId#
 	</select>
+	
+	<!-- 전체 유저 삭제(테스트용) -->
+	<delete id="deleteAllUsers">
+		DELETE FROM USER
+	</delete>
 
 </mapper>

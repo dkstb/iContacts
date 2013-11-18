@@ -34,7 +34,12 @@ public class UsersDaoImpl extends SqlSessionDaoSupport implements UsersDao {
         }
 
         
-        // ÀÌ¸ÞÀÏ ¾ÆÀÌµð·Î¸¸ À¯Àú Ã¼Å©
+        @Override
+		public int deleteAllUsers() throws Exception {
+        	return getSqlSession().delete("com.iContacts.bitschool.dao.UsersDao.deleteAllUsers");
+		}
+
+		// ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
         @Override
         public Users checkUsers(Users users) throws Exception {
                 return (Users)getSqlSession().selectOne("Users.checkUsers", users);

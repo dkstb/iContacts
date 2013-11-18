@@ -8,6 +8,10 @@ body {
 	color:#57A957;
 }
 
+.btn {
+	margin-left: 10px;
+}
+
 /* 공통 가운데 컨테이너 박스 */
 .container.text-center h1 {
 	padding-top: 110px;

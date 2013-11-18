@@ -1,4 +1,4 @@
-package com.iContacts.bitschool;
+package com.iContacts.bitschool.serviceImpl;
 
 import javax.inject.Inject;
 
@@ -40,8 +40,13 @@ public class UsersServiceImpl implements UsersService {
                 return usersDao.deleteUsers(users);
         }
 
+        // í…ŒìŠ¤íŠ¸ìš© ìœ ì € ì „ì²´ ì‚­ì œ
+        @Override
+		public int deleteAllUsers() throws Exception {
+        	return usersDao.deleteAllUsers();
+		}
 
-        // ÀÌ¸ÞÀÏ ¾ÆÀÌµð·Î¸¸ À¯Àú Ã¼Å©
+		// ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
         @Override
         public Users checkUsers(Users users) throws Exception {
                 return (Users)usersDao.checkUsers(users);

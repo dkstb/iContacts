@@ -7,6 +7,9 @@ public interface UsersService {
     public Users getUsers(Users users) throws Exception;
     public int updateUsers(Users users) throws Exception;
     public int deleteUsers(Users users) throws Exception;
-    // ÀÌ¸ŞÀÏ ¾ÆÀÌµğ·Î¸¸ À¯Àú Ã¼Å©
+    // ì´ë©”ì¼ë¡œ ì²´í¬
     public Users checkUsers(Users users) throws Exception;
+    
+    // í…ŒìŠ¤íŠ¸ìš© ì „ì²´ ìœ ì € ì‚­ì œ
+    public int deleteAllUsers() throws Exception;
 }

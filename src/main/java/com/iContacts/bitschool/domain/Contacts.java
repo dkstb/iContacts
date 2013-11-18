@@ -13,7 +13,7 @@ public class Contacts {
 	private String memo;
 
 	public Contacts() {
-		System.out.println("Cotacts 생성");
+		System.out.println("Contacts 생성");
 	}
 
 	public int getId() {

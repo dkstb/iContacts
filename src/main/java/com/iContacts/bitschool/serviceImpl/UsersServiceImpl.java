@@ -15,7 +15,7 @@ public class UsersServiceImpl implements UsersService {
         UsersDao usersDao;
         
         public UsersServiceImpl() {
-                // TODO Auto-generated constructor stub
+        	System.out.println("UsersServiceImpl 생성...");
         }
 
         @Override

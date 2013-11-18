@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+                                        
+<mapper namespace="com.iContacts.bitschool.dao.ContactsDao">
+
+	<resultMap type="com.iContacts.bitschool.domain.Contacts" id="contactsSelectMap">
+		<result property="id" 		column="contact_id" jdbcType="INTEGER" />
+		<result property="userId"	column="user_id"	jdbcType="INTEGER" />
+		<result property="name" 	column="name" 		jdbcType="VARCHAR" />
+		<result property="phoneNum" column="phone_num" 	jdbcType="VARCHAR" />
+		<result property="email" 	column="email" 		jdbcType="VARCHAR" />
+		<result property="work" 	column="work" 		jdbcType="VARCHAR" />
+		<result property="homeAddr" column="home_addr"	jdbcType="VARCHAR" />
+		<result property="webPage" 	column="web_page"	jdbcType="VARCHAR" />
+		<result property="memo" 	column="memo" 		jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- Create Contacts -->
+	<insert id="insertContacts" parameterType="com.iContacts.bitschool.domain.Contacts"
+		useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO CONTACT ( user_id, name, phone_num, email, work, home_addr, web_page, memo )
+		VALUES ( #{userId}, #{name}, #{phoneNum}, #{email}, #{work}, #{homeAddr}, #{webPage}, #{memo} )
+	</insert>
+
+	<!-- Read Contacts -->
+	<select id="getContacts" resultMap="contactsSelectMap"
+		parameterType="com.iContacts.bitschool.domain.Contacts">
+		SELECT * FROM USER
+		WHERE email = #{email}
+	</select>
+
+	<!-- Update Contacts -->
+	<update id="updateContacts" parameterType="com.iContacts.bitschool.domain.Contacts">
+		UPDATE USERS
+		SET name=#name#, password=#password#, gender=#gender#, age=#age#,
+		profile_image=#profileImage#
+		WHERE user_no = #userNo#
+	</update>
+
+	<!-- Delete Contacts -->
+	<delete id="deleteContacts" parameterType="com.iContacts.bitschool.domain.Contacts">
+		DELETE
+		FROM USERS
+		WHERE user_no = #userNo#
+	</delete>
+
+	<!-- Check Contacts -->
+	<select id="checkContacts" resultMap="contactsSelectMap"
+		parameterType="com.iContacts.bitschool.domain.Contacts">
+		SELECT user_no, email_id, password, name, gender, age, profile_image,
+		g_state
+		FROM USERS
+		WHERE email_id=#emailId#
+	</select>
+	
+	<!-- 전체 유저 삭제(테스트용) -->
+	<delete id="deleteAllContacts">
+		DELETE FROM CONTACT
+	</delete>
+
+</mapper>

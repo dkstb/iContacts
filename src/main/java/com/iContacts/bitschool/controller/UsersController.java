@@ -18,24 +18,24 @@ import com.iContacts.bitschool.service.UsersService;
 public class UsersController {
 
         public UsersController() {
-                System.out.println("UsersController() »ı¼ºÀÚ start...");
+                System.out.println("UsersController() start...");
         }
         
         @Inject
         UsersService usersService;
         
-        //¾ÆÀÌµğ(ÀÌ¸ŞÀÏ) Áßº¹ Ã¼Å©
+        //ï¿½ï¿½ï¿½Ìµï¿½(ï¿½Ì¸ï¿½ï¿½ï¿½) ï¿½ßºï¿½ Ã¼Å©
 //        @RequestMapping("/checkOverlap.do")
 //        @ResponseBody
 //        public Object checkOverlap(@ModelAttribute("users") Users users) throws Exception {
 //                System.out.println("checkOverlap controller start....");
 //                
-//                System.out.println("dbÀü:"+users);
+//                System.out.println("dbï¿½ï¿½:"+users);
 //                
 //                HashMap<String, Object> map= new HashMap<String,Object>();
 //                Users dbUsers = new Users();
 //                dbUsers = (Users)usersService.getUsers(users);
-//                System.out.println("dbÈÄ:"+dbUsers);
+//                System.out.println("dbï¿½ï¿½:"+dbUsers);
 //                
 //                if(dbUsers == null) {
 //                        map.put("result", "success");
@@ -47,7 +47,7 @@ public class UsersController {
 //                return map;
 //        }
         
-        //È¸¿ø°¡ÀÔ
+        //íšŒì› ê°€ì…
         @RequestMapping("/insertUsers.contact")
         @ResponseBody
         public Object insertUsers(@ModelAttribute("users") Users users,
@@ -57,15 +57,15 @@ public class UsersController {
                 
                 Users dbUsers = new Users();
                 dbUsers = (Users)usersService.getUsers(users);
-                System.out.println("dbÈÄ:"+dbUsers);
+                System.out.println("db í›„:"+dbUsers);
                 
                 if(dbUsers == null) {
                         users.setId(usersService.insertUsers(users));
-                        System.out.println("db ÈÄ users:"+users);
+                        System.out.println("db í›„ users:"+users);
 
                         map.put("result", "success");
                         
-//                        // ¼¼¼Ç¿¡ À¯ÀúÀÇ ÀÌ¸§°ú ÀÌ¸ŞÀÏ¸¸ ÀúÀå
+//                        // ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 //                        Users newUsers = new Users();
 //                        newUsers.setName(users.getName());
 //                        newUsers.setEmail(users.getEmail());
@@ -79,7 +79,7 @@ public class UsersController {
                 
         }
         
-        // ÆäÀÌ½ººÏ È¸¿ø °¡ÀÔ
+        // ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //        @RequestMapping("/fbInsertUsers.do")
 //        @ResponseBody
 //        public Object fbInsertUsers(@ModelAttribute("users") Users users ,
@@ -92,13 +92,13 @@ public class UsersController {
 //                
 //                Users dbUsers = new Users();
 //                dbUsers = (Users)usersService.checkUsers(users);
-//                System.out.println("Áßº¹ Ã¼Å©:: "+dbUsers);
+//                System.out.println("ï¿½ßºï¿½ Ã¼Å©:: "+dbUsers);
 //                
 //                if(dbUsers == null) {
 //                        users.setUserNo(usersService.insertUsers(users));
-//                        System.out.println("db ÈÄ users:"+users);
+//                        System.out.println("db ï¿½ï¿½ users:"+users);
 //
-//                        // ¼¼¼Ç¿¡ À¯ÀúÀÇ ÀÌ¸§°ú À¯Àú³Ñ¹ö¸¸ ÀúÀå
+//                        // ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //                        Users newUsers = new Users();
 //                        newUsers.setName(users.getName());
 //                        newUsers.setUserNo(users.getUserNo());
@@ -115,30 +115,30 @@ public class UsersController {
 //                }else{
 //                        map.put("result", "fail");
 //                }
-//                // ¼¼¼Ç¿¡ À¯ÀúÀÇ ÀÌ¸§°ú À¯Àú³Ñ¹ö¸¸ ÀúÀå
+//                // ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //                Users newUsers = new Users();
 //                newUsers.setName(dbUsers.getName());
 //                newUsers.setUserNo(dbUsers.getUserNo());
 //                session.setAttribute("users", newUsers);
 //                map.put("users", newUsers);
-//                System.out.println("session usersÁ¤º¸:"+session.getAttribute("users"));
+//                System.out.println("session usersï¿½ï¿½ï¿½ï¿½:"+session.getAttribute("users"));
 //                
 //                System.out.println("fbInsertUsers controller end....");
 //                return map;
 //        }
 //        
-//        //·Î±×ÀÎ(°¡ÀÌµå ¿©ºÎ Ã¼Å© Æ÷ÇÔ)
+//        //ï¿½Î±ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼Å© ï¿½ï¿½ï¿½ï¿½)
 //        @RequestMapping("/loginUsers.do")
 //        @ResponseBody
 //        public Object loginUsers(@ModelAttribute("users") Users users ,
 //                        HttpSession session) throws Exception {
 //                
-//                System.out.println("dbÀü:"+users);
+//                System.out.println("dbï¿½ï¿½:"+users);
 //                HashMap<String, Object> map= new HashMap<String,Object>();
 //
 //                Users dbUsers = new Users();
 //                dbUsers = (Users)usersService.getUsers(users);
-//                System.out.println("dbÈÄ:"+dbUsers);
+//                System.out.println("dbï¿½ï¿½:"+dbUsers);
 //                
 //                if(dbUsers == null) {
 //                        map.put("result", "noInformation");
@@ -151,21 +151,21 @@ public class UsersController {
 //                        } else {
 //                                map.put("result", "guide");
 //                        }
-//                        // ¼¼¼Ç¿¡ À¯ÀúÀÇ ÀÌ¸§°ú À¯Àú³Ñ¹ö¸¸ ÀúÀå
+//                        // ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //                        Users newUsers = new Users();
 //                        newUsers.setName(dbUsers.getName());
 //                        newUsers.setUserNo(dbUsers.getUserNo());
 //                        session.setAttribute("users", newUsers);
 //                        map.put("users", newUsers);
 //                        
-//                        System.out.println("session usersÁ¤º¸:"+session.getAttribute("users"));
+//                        System.out.println("session usersï¿½ï¿½ï¿½ï¿½:"+session.getAttribute("users"));
 //                } else {
 //                        map.put("result", "fail");
 //                }
 //                return map;
 //        }
 //        
-//        //·Î±×¾Æ¿ô
+//        //ï¿½Î±×¾Æ¿ï¿½
 //        @RequestMapping("/logoutUsers.do")
 //        @ResponseBody
 //        public Object logoutUsers(HttpSession session){
@@ -175,22 +175,22 @@ public class UsersController {
 //                session.removeAttribute("users");
 //                map.put("result", "success");
 //                
-//                System.out.println("session usersÁ¤º¸:"+session.getAttribute("users"));
+//                System.out.println("session usersï¿½ï¿½ï¿½ï¿½:"+session.getAttribute("users"));
 //                System.out.println("logoutUssers controller end....");
 //                        
 //                return map;
 //        }
 //        
-//        // ³»Á¤º¸ º¸±â
+//        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //        @RequestMapping("/seeUsersInfo.do")
 //        @ResponseBody
 //        public Object seeUsersInfo(Users users, HttpSession session) throws Exception {
 //                System.out.println("SeeUsersInfo Controller start...");
 //                
-//                //session userNo °¡Á®¿À±â
+//                //session userNo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //                users = (Users)session.getAttribute("users");
 //                
-//                System.out.println("session users Á¤º¸: "+users);
+//                System.out.println("session users ï¿½ï¿½ï¿½ï¿½: "+users);
 //                
 //                HashMap<String, Object> map = new HashMap<String, Object>();
 //                
@@ -208,22 +208,22 @@ public class UsersController {
 //                return map;
 //        }
 //        
-//        // ³»Á¤º¸ ¼öÁ¤
+//        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //        @RequestMapping("/updateUsers.do")
 //        @ResponseBody
 //        public Object updateUsers(@ModelAttribute("users") Users users, HttpSession session) throws Exception {
 //                System.out.println("UpdateUsers Controller start...");
 //                HashMap<String, Object> map = new HashMap<String, Object>();
 //
-//                System.out.println("ÆÄ¶ó¹ÌÅÍ À¯Àú Á¤º¸ :: "+users);
+//                System.out.println("ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ :: "+users);
 //                
-//                // db À¯Àú Á¤º¸ °¡Á®¿È.
+//                // db ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 //                Users sUsers = new Users();
-//                sUsers = (Users)session.getAttribute("users");        //session Á¤º¸¿¡¼­ userNo ¹ŞÀ½.
+//                sUsers = (Users)session.getAttribute("users");        //session ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ userNo ï¿½ï¿½ï¿½ï¿½.
 //                users.setUserNo(sUsers.getUserNo());
 //
 //                Users dbUsers = usersService.getUsers(sUsers);
-//                System.out.println("DB User Á¤º¸:: "+dbUsers);
+//                System.out.println("DB User ï¿½ï¿½ï¿½ï¿½:: "+dbUsers);
 //                
 //                users.setEmailId(dbUsers.getEmailId());
 //                users.setName(dbUsers.getName());
@@ -231,7 +231,7 @@ public class UsersController {
 //                        users.setProfileImage(dbUsers.getProfileImage());
 //                }
 //                
-//                System.out.println("updateÇÒ °ª:"+users);        
+//                System.out.println("updateï¿½ï¿½ ï¿½ï¿½:"+users);        
 //
 //                if(usersService.updateUsers(users)==1){
 //                        map.put("result", "success");
@@ -243,16 +243,16 @@ public class UsersController {
 //                return map;
 //        }
 //        
-//        //È¸¿øÅ»Åğ
+//        //È¸ï¿½ï¿½Å»ï¿½ï¿½
 //        @RequestMapping("/deleteUsers.do")
 //        @ResponseBody
 //        public Object deleteUsers(HttpSession session, Users users, Guide guide) 
 //                        throws Exception {
 //                System.out.println("DeleteUsers Controller start...");
 //                
-//                //session userNo °¡Á®¿À±â
+//                //session userNo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //                users = (Users)session.getAttribute("users");
-//                System.out.println("session users Á¤º¸: "+users);
+//                System.out.println("session users ï¿½ï¿½ï¿½ï¿½: "+users);
 //
 //                
 //                users = (Users)usersService.getUsers(users);
@@ -269,14 +269,14 @@ public class UsersController {
 //                return map;
 //        }
 //        
-//        //ÆäÀÌÁö º¯°æ½Ã, login/guide ¿©ºÎ Ã¼Å©
+//        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½, login/guide ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 //        @RequestMapping("/checkAccount.do")
 //        @ResponseBody
 //        public Object checkAccount(HttpSession session, Users users) throws Exception {
 //                System.out.println("<<<<<checkAccount Controller start...");
 //
 //        HashMap<String, Object> map = new HashMap<String, Object>();
-//        System.out.println("session users Á¤º¸: "+session.getAttribute("users"));
+//        System.out.println("session users ï¿½ï¿½ï¿½ï¿½: "+session.getAttribute("users"));
 //        if(session.getAttribute("users") == null){
 //                System.out.println("<<<<<checkAccount Controller end...");
 //                map.put("result", "logout");

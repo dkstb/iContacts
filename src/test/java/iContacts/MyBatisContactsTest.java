@@ -20,7 +20,7 @@ public class MyBatisContactsTest {
 		// 1. UsersService.insertUsers Test
 		usersService.deleteAllUsers();
 		
-		// Test Users instance 생성
+		// Test Users instance 생성자
 		Users users = new Users();
 		users.setEmail("win@hanmail.net");
 		users.setPassword("1234");

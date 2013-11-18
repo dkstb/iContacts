@@ -16,9 +16,6 @@ public class AjaxControlFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-            // 필터 객체가 최초로 생성된 후
-            // 역할을 제대로 수행 할 수 있도록 준비를 시키기 위해 호출함.
-            // - 필터의 역할 수행에 필요한 작업을 명시하면 됨.
 
             allowDomain = filterConfig.getInitParameter("allowDomain");
     }

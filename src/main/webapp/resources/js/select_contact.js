@@ -14,6 +14,7 @@ $(document).ready(function() {
 			},
 			success : function(data) {
 				var contacts = data.contacts;
+				$('#contact_id').val(contacts.id);
 				$('#contact_name').val(contacts.name);
 				$('#contact_phone_num').val(contacts.phoneNum);
 				$('#contact_work').val(contacts.work);

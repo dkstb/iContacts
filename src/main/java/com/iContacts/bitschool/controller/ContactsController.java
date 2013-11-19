@@ -32,17 +32,15 @@ public class ContactsController {
         // 주소록 등록
         @RequestMapping("/insertContact.contact")
         @ResponseBody
-        public Object insertContacts(@ModelAttribute("contacts") Contacts contacts,
+        public Object insertContacts(@ModelAttribute("contacts") Contacts contacts, Users users,
                         HttpSession session) throws Exception {
             System.out.println("InsertContacts controller start....");
             HashMap<String, Object> map= new HashMap<String,Object>();
             
             // 유저 생성 (테스트용)
-    		Users users = new Users();
-    		users.setEmail("win@hanmail.net");
-    		users.setPassword("1234");
-    		users.setName("김위나");
-    		usersService.insertUsers(users);
+    
+            users.setId(93);
+    	
     		
     		// 세션에 유저 아이디 등록 (로그인)
     		session.setAttribute("users", users.getId());
@@ -66,13 +64,13 @@ public class ContactsController {
      // 주소록 리스트 조회
         @RequestMapping("/selectContactList.contact")
         @ResponseBody
-        public Object selectContactList(@ModelAttribute("contacts") Contacts contacts,
+        public Object selectContactList(@ModelAttribute("contacts") Contacts contacts, Users users,
                         HttpSession session) throws Exception {
             System.out.println("SelectContactList controller start....");
             HashMap<String, Object> map= new HashMap<String,Object>();
             List<Contacts> contactList;
             // 유저 생성 (테스트용)
-    		Users users = new Users();
+
     		users.setId(93);
     
     		// 세션에 유저 아이디 등록 (로그인)
@@ -95,12 +93,29 @@ public class ContactsController {
             System.out.println("SelectContact controller start....");
             HashMap<String, Object> map= new HashMap<String,Object>();
             
-            System.out.println("아이디 넘어왔니? "+contacts);
-            
     		contacts = contactsService.getContact(contacts);
     		
     		map.put("result", "success");
     		map.put("contacts", contacts);
+    		
+    		return map;
+        }
+        
+        
+        @RequestMapping("/updateContact.contact")
+        @ResponseBody
+        public Object updateContact(@ModelAttribute("contacts") Contacts contacts, Users users,
+                        HttpSession session) throws Exception {
+            System.out.println("UpdateContact controller start....");
+            HashMap<String, Object> map= new HashMap<String,Object>();
+            
+            users.setId(93);
+    		// 세션에 유저 아이디 등록 (로그인)
+    		session.setAttribute("users", users.getId());
+    		// 파라미터로 받은 주소록에 세션에 있는 유저 아이디 세팅
+    		contacts.setUserId((Integer) session.getAttribute("users"));
+    		contactsService.updateContacts(contacts);
+    		map.put("result", "success");
     		
     		return map;
         }

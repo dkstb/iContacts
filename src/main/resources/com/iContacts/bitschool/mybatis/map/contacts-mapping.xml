@@ -26,35 +26,35 @@
 	</insert>
 
 	<!-- Read Contacts -->
-	<select id="getContacts" resultMap="contactsSelectMap"
-		parameterType="com.iContacts.bitschool.domain.Contacts">
-		SELECT * FROM USER
-		WHERE email = #{email}
-	</select>
+<!-- 	<select id="getContacts" resultMap="contactsSelectMap" -->
+<!-- 		parameterType="com.iContacts.bitschool.domain.Contacts"> -->
+<!-- 		SELECT * FROM USER -->
+<!-- 		WHERE email = #{email} -->
+<!-- 	</select> -->
 
 	<!-- Update Contacts -->
-	<update id="updateContacts" parameterType="com.iContacts.bitschool.domain.Contacts">
-		UPDATE USERS
-		SET name=#name#, password=#password#, gender=#gender#, age=#age#,
-		profile_image=#profileImage#
-		WHERE user_no = #userNo#
-	</update>
+<!-- 	<update id="updateContacts" parameterType="com.iContacts.bitschool.domain.Contacts"> -->
+<!-- 		UPDATE USERS -->
+<!-- 		SET name=#name#, password=#password#, gender=#gender#, age=#age#, -->
+<!-- 		profile_image=#profileImage# -->
+<!-- 		WHERE user_no = #userNo# -->
+<!-- 	</update> -->
 
 	<!-- Delete Contacts -->
-	<delete id="deleteContacts" parameterType="com.iContacts.bitschool.domain.Contacts">
-		DELETE
-		FROM USERS
-		WHERE user_no = #userNo#
-	</delete>
+<!-- 	<delete id="deleteContacts" parameterType="com.iContacts.bitschool.domain.Contacts"> -->
+<!-- 		DELETE -->
+<!-- 		FROM USERS -->
+<!-- 		WHERE user_no = #userNo# -->
+<!-- 	</delete> -->
 
 	<!-- Check Contacts -->
-	<select id="checkContacts" resultMap="contactsSelectMap"
-		parameterType="com.iContacts.bitschool.domain.Contacts">
-		SELECT user_no, email_id, password, name, gender, age, profile_image,
-		g_state
-		FROM USERS
-		WHERE email_id=#emailId#
-	</select>
+<!-- 	<select id="checkContacts" resultMap="contactsSelectMap" -->
+<!-- 		parameterType="com.iContacts.bitschool.domain.Contacts"> -->
+<!-- 		SELECT user_no, email_id, password, name, gender, age, profile_image, -->
+<!-- 		g_state -->
+<!-- 		FROM USERS -->
+<!-- 		WHERE email_id=#emailId# -->
+<!-- 	</select> -->
 	
 	<!-- 전체 유저 삭제(테스트용) -->
 	<delete id="deleteAllContacts">

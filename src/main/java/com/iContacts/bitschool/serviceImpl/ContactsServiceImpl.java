@@ -3,11 +3,13 @@ package com.iContacts.bitschool.serviceImpl;
 import javax.inject.Inject;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
+import org.springframework.stereotype.Repository;
 
 import com.iContacts.bitschool.dao.ContactsDao;
 import com.iContacts.bitschool.domain.Contacts;
 import com.iContacts.bitschool.service.ContactsService;
 
+@Repository
 public class ContactsServiceImpl extends SqlSessionDaoSupport implements
 		ContactsService {
 

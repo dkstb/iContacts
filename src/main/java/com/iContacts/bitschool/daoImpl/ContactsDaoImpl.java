@@ -1,10 +1,12 @@
 package com.iContacts.bitschool.daoImpl;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
+import org.springframework.stereotype.Repository;
 
 import com.iContacts.bitschool.dao.ContactsDao;
 import com.iContacts.bitschool.domain.Contacts;
 
+@Repository
 public class ContactsDaoImpl extends SqlSessionDaoSupport implements ContactsDao {
 	
 	public ContactsDaoImpl() {
@@ -13,7 +15,7 @@ public class ContactsDaoImpl extends SqlSessionDaoSupport implements ContactsDao
 
 	@Override
 	public int insertContacts(Contacts contacts) throws Exception {
-		return (Integer) getSqlSession().insert("com.iContacts.bitschool.dao.UsersDao.insertContacts", contacts);
+		return (Integer) getSqlSession().insert("com.iContacts.bitschool.dao.ContactsDao.insertContacts", contacts);
 	}
 
 	@Override
@@ -36,7 +38,7 @@ public class ContactsDaoImpl extends SqlSessionDaoSupport implements ContactsDao
 
 	@Override
 	public int deleteAllContacts() throws Exception {
-		return getSqlSession().delete("com.iContacts.bitschool.dao.ContactsDao.deleteAllUsers");
+		return getSqlSession().delete("com.iContacts.bitschool.dao.ContactsDao.deleteAllContacts");
 	}
 
 }

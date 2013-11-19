@@ -63,11 +63,12 @@ public class ContactsController {
     		return map;
         }
         
+     // 주소록 리스트 조회
         @RequestMapping("/selectContactList.contact")
         @ResponseBody
-        public Object selectContacts(@ModelAttribute("contacts") Contacts contacts,
+        public Object selectContactList(@ModelAttribute("contacts") Contacts contacts,
                         HttpSession session) throws Exception {
-            System.out.println("SelectContacts controller start....");
+            System.out.println("SelectContactList controller start....");
             HashMap<String, Object> map= new HashMap<String,Object>();
             List<Contacts> contactList;
             // 유저 생성 (테스트용)
@@ -81,60 +82,29 @@ public class ContactsController {
     		contactList = contactsService.getContactsList(contacts);
     		System.out.println("주소록 리스트 : " + contactList);
     		map.put("result", "success");
-    		map.put("contacts", contactList);
+    		map.put("contactList", contactList);
     		
     		return map;
-  
         }
         
-        // ���̽��� ȸ�� ����
-//        @RequestMapping("/fbInsertUsers.do")
-//        @ResponseBody
-//        public Object fbInsertUsers(@ModelAttribute("users") Users users ,
-//                        HttpSession session) throws Exception {
-//                System.out.println("fbInsertUsers controller start....");
-//                HashMap<String, Object> map= new HashMap<String,Object>();
-//                
-//                session.removeAttribute("users");
-//                users.setProfileImage("aaa.png");
-//                
-//                Users dbUsers = new Users();
-//                dbUsers = (Users)usersService.checkUsers(users);
-//                System.out.println("�ߺ� üũ:: "+dbUsers);
-//                
-//                if(dbUsers == null) {
-//                        users.setUserNo(usersService.insertUsers(users));
-//                        System.out.println("db �� users:"+users);
-//
-//                        // ���ǿ� ������ �̸��� ����ѹ��� ����
-//                        Users newUsers = new Users();
-//                        newUsers.setName(users.getName());
-//                        newUsers.setUserNo(users.getUserNo());
-//                        session.setAttribute("users", newUsers);
-//                        map.put("users", newUsers);
-//                        map.put("result", "success");
-//                        
-//                        System.out.println("fbInsertUsers controller end....");
-//                        return map;
-//                }else if(dbUsers.getGState().equals("F")) {
-//                        map.put("result", "login");
-//                }else if(dbUsers.getGState().equals("T")){
-//                        map.put("result", "guide");
-//                }else{
-//                        map.put("result", "fail");
-//                }
-//                // ���ǿ� ������ �̸��� ����ѹ��� ����
-//                Users newUsers = new Users();
-//                newUsers.setName(dbUsers.getName());
-//                newUsers.setUserNo(dbUsers.getUserNo());
-//                session.setAttribute("users", newUsers);
-//                map.put("users", newUsers);
-//                System.out.println("session users����:"+session.getAttribute("users"));
-//                
-//                System.out.println("fbInsertUsers controller end....");
-//                return map;
-//        }
-//        
+        // 상세 주소 조회
+        @RequestMapping("/selectContact.contact")
+        @ResponseBody
+        public Object selectContact(@ModelAttribute("contacts") Contacts contacts,
+                        HttpSession session) throws Exception {
+            System.out.println("SelectContact controller start....");
+            HashMap<String, Object> map= new HashMap<String,Object>();
+            
+            System.out.println("아이디 넘어왔니? "+contacts);
+            
+    		contacts = contactsService.getContact(contacts);
+    		
+    		map.put("result", "success");
+    		map.put("contacts", contacts);
+    		
+    		return map;
+        }
+        
         //로그인 컨트롤러
 //        @RequestMapping("/loginUsers.do")
 //        @ResponseBody

@@ -16,9 +16,6 @@ public class AjaxControlFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-            // ÇÊÅÍ °´Ã¼°¡ ÃÖÃÊ·Î »ı¼ºµÈ ÈÄ
-            // ¿ªÇÒÀ» Á¦´ë·Î ¼öÇà ÇÒ ¼ö ÀÖµµ·Ï ÁØºñ¸¦ ½ÃÅ°±â À§ÇØ È£ÃâÇÔ.
-            // - ÇÊÅÍÀÇ ¿ªÇÒ ¼öÇà¿¡ ÇÊ¿äÇÑ ÀÛ¾÷À» ¸í½ÃÇÏ¸é µÊ.
 
             allowDomain = filterConfig.getInitParameter("allowDomain");
     }
@@ -32,6 +29,13 @@ public class AjaxControlFilter implements Filter {
 
             ((HttpServletResponse) response).setHeader(
                             "Access-Control-Allow-Origin", "*");
+
+            // ìœ ì € ì•„ì´ë”” ìºìŠ¤íŒ…
+//            if (request.getAttribute("id") != null) {
+//            	int id = (Integer) request.getAttribute("id");
+//            	request.setAttribute("id", id);
+//			}
+            
             filterChain.doFilter(request, response);
 
             System.out.println("dofilter after");

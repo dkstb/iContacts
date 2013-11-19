@@ -1,17 +1,20 @@
 $(document).ready(function() {
 	
-	// ajax 전송
+	// 주소록 조회
 	$.ajax('/bitschool/ajax/selectContactList.contact', {
 		type : 'GET',
 		dataType : 'json',
 		success : function(data) {
-			var contacts = data.contacts;
+			var contactList = data.contactList;
 
-			for (var i = 0; i < contacts.length; i++) {
-				$('<tr>').append($('<td>').text(contacts[i].name)).appendTo(
-						'#contact_list');
-				console.log('이름 : ' + contacts[i].name);
+			for (var i = 0; i < contactList.length; i++) {
+				$('<tr>').append($('<td>')
+						.addClass('contact_id')
+						.attr('contact_id', contactList[i].id)
+						.text(contactList[i].name))
+				.appendTo('#contact_list');
 			}
 		}
 	});
+	
 });

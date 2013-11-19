@@ -18,7 +18,7 @@ $(document).ready(function(){
                         success:function(data){
                                 if(data.result=='success') {
                                     alert($('#contact_name').val() + '님이 추가되었습니다.');
-                                } else if (data.result=='name is null') {
+                                } else if (data.result=='nullname') {
                                 	alert('이름은 필수 항목입니다.');
                                 } else {
                                     alert('주소록 등록이 실패했습니다.');

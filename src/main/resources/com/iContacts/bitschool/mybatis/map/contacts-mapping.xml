@@ -25,27 +25,33 @@
 		VALUES ( #{userId}, #{name}, #{phoneNum}, #{email}, #{work}, #{homeAddr}, #{webPage}, #{memo} )
 	</insert>
 
-	<!-- Read Contacts -->
-<!-- 	<select id="getContacts" resultMap="contactsSelectMap" -->
-<!-- 		parameterType="com.iContacts.bitschool.domain.Contacts"> -->
-<!-- 		SELECT * FROM USER -->
-<!-- 		WHERE email = #{email} -->
-<!-- 	</select> -->
+	<!-- Read ContactsList -->
+	<select id="getContactsList" resultMap="contactsSelectMap"
+		parameterType="com.iContacts.bitschool.domain.Contacts">
+		SELECT name FROM CONTACT
+		WHERE name = #{name}
+	</select>
+	
+	<!-- Read 상세 주소 (클릭) -->
+	<select id="getContact" resultMap="contactsSelectMap" 
+	parameterType="com.iContacts.bitschool.domain.Contacts">
+		SELECT * FROM CONTACT
+		WHERE contact_id = #{id}
+	</select>
 
 	<!-- Update Contacts -->
-<!-- 	<update id="updateContacts" parameterType="com.iContacts.bitschool.domain.Contacts"> -->
-<!-- 		UPDATE USERS -->
-<!-- 		SET name=#name#, password=#password#, gender=#gender#, age=#age#, -->
-<!-- 		profile_image=#profileImage# -->
-<!-- 		WHERE user_no = #userNo# -->
-<!-- 	</update> -->
+	<update id="updateContacts" parameterType="com.iContacts.bitschool.domain.Contacts">
+		UPDATE CONTACT
+		SET name=#{name}, phone_num=#{phoneNum}, email=#{email}, work=#{work}, home_addr=#{homeAddr}, web_page=#{webPage}, memo=#{memo}
+		WHERE contact_id = #{id}
+	</update>
 
 	<!-- Delete Contacts -->
-<!-- 	<delete id="deleteContacts" parameterType="com.iContacts.bitschool.domain.Contacts"> -->
-<!-- 		DELETE -->
-<!-- 		FROM USERS -->
-<!-- 		WHERE user_no = #userNo# -->
-<!-- 	</delete> -->
+	<delete id="deleteContacts" parameterType="com.iContacts.bitschool.domain.Contacts">
+		DELETE
+		FROM CONTACT
+		WHERE contact_id = #{id}
+	</delete>
 
 	<!-- Check Contacts -->
 <!-- 	<select id="checkContacts" resultMap="contactsSelectMap" -->

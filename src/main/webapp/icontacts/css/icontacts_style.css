@@ -23,3 +23,8 @@ thead {
 	padding-right: 20px;
 	background-color:#57A957;
 }
+
+.contacts-list .form-inline button {
+	border: 0px;
+	padding: 1px 30px;
+}

@@ -25,7 +25,7 @@ public class MyBatisContactsTest {
 		assertNotNull(contactsService.insertContacts(contacts));
 	}
 
-	@Test	// 주소록 조회 테스트
+//	@Test	// 주소록 조회 테스트
 	public void getContactsListTest() throws Exception {
 		ApplicationContext context = new FileSystemXmlApplicationContext(
 				"src/main/webapp/WEB-INF/mybatis/mybatis-context.xml");
@@ -39,7 +39,7 @@ public class MyBatisContactsTest {
 		assertNotNull(contactsService.getContactsList(contacts));	// 리스트 불러와서 널 아닌 것 테스트
 	}
 	
-	@Test 	// 상세 주소 조회 테스트
+//	@Test 	// 상세 주소 조회 테스트
 	public void getContactTest() throws Exception {
 		ApplicationContext context = new FileSystemXmlApplicationContext(
 				"src/main/webapp/WEB-INF/mybatis/mybatis-context.xml");
@@ -51,7 +51,7 @@ public class MyBatisContactsTest {
 		assertNotNull(contactsService.getContact(contacts));	// 상세 주소 조회
 	}
 	
-	@Test	// 상세 주소 업데이트 테스트
+//	@Test	// 상세 주소 업데이트 테스트
 	public void updateContact() throws Exception {
 		ApplicationContext context = new FileSystemXmlApplicationContext(
 				"src/main/webapp/WEB-INF/mybatis/mybatis-context.xml");
@@ -70,7 +70,7 @@ public class MyBatisContactsTest {
 		assertNotNull(contactsService.updateContacts(contacts));
 	}
 	
-	@Test
+//	@Test
 	public void deleteContact() throws Exception {
 		ApplicationContext context = new FileSystemXmlApplicationContext(
 				"src/main/webapp/WEB-INF/mybatis/mybatis-context.xml");

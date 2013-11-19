@@ -29,7 +29,7 @@
 	<select id="getContactsList" resultMap="contactsSelectMap"
 		parameterType="com.iContacts.bitschool.domain.Contacts">
 		SELECT name FROM CONTACT
-		WHERE name = #{name}
+		WHERE user_id = #{userId}
 	</select>
 	
 	<!-- Read 상세 주소 (클릭) -->
@@ -53,15 +53,6 @@
 		WHERE contact_id = #{id}
 	</delete>
 
-	<!-- Check Contacts -->
-<!-- 	<select id="checkContacts" resultMap="contactsSelectMap" -->
-<!-- 		parameterType="com.iContacts.bitschool.domain.Contacts"> -->
-<!-- 		SELECT user_no, email_id, password, name, gender, age, profile_image, -->
-<!-- 		g_state -->
-<!-- 		FROM USERS -->
-<!-- 		WHERE email_id=#emailId# -->
-<!-- 	</select> -->
-	
 	<!-- 전체 유저 삭제(테스트용) -->
 	<delete id="deleteAllContacts">
 		DELETE FROM CONTACT

@@ -37,15 +37,11 @@ public class ContactsController {
             System.out.println("InsertContacts controller start....");
             HashMap<String, Object> map= new HashMap<String,Object>();
             
-            // 유저 생성 (테스트용)
-    
-            users.setId(107);
-    		
-    		// 세션에 유저 아이디 등록 (로그인)
-    		session.setAttribute("users", users.getId());
+            // 세션에서 로그인 한 유저 정보 가져오기
+    		users = ((Users)session.getAttribute("users"));
     		
     		// 파라미터로 받은 주소록에 세션에 있는 유저 아이디 세팅
-    		contacts.setUserId((Integer) session.getAttribute("users"));
+    		contacts.setUserId(users.getId());
     		
     		// 주소록 이름 널체크
     		if (contacts.getName().equals("")) {
@@ -75,7 +71,7 @@ public class ContactsController {
             HashMap<String, Object> map= new HashMap<String,Object>();
             List<Contacts> contactList;
             
-            
+            // 세션에서 로그인 한 유저 정보 가져오기
     		users = ((Users)session.getAttribute("users"));
     
     		contacts.setUserId(users.getId());
@@ -111,11 +107,11 @@ public class ContactsController {
             System.out.println("UpdateContact controller start....");
             HashMap<String, Object> map= new HashMap<String,Object>();
             
-            users.setId(107);
-    		// 세션에 유저 아이디 등록 (로그인)
-    		session.setAttribute("users", users.getId());
+            // 세션에서 로그인 한 유저 정보 가져오기
+    		users = ((Users)session.getAttribute("users"));
+    		
     		// 파라미터로 받은 주소록에 세션에 있는 유저 아이디 세팅
-    		contacts.setUserId((Integer) session.getAttribute("users"));
+    		contacts.setUserId(users.getId());
     		contactsService.updateContacts(contacts);
     		map.put("result", "success");
     		
@@ -130,12 +126,11 @@ public class ContactsController {
             System.out.println("DeleteContact controller start....");
             HashMap<String, Object> map= new HashMap<String,Object>();
             
-            // 유저 정보 테스트용 세팅
-            users.setId(107);
-    		// 세션에 유저 아이디 등록 (로그인)
-    		session.setAttribute("users", users.getId());
+            // 세션에서 로그인 한 유저 정보 가져오기
+    		users = ((Users)session.getAttribute("users"));
+    		
     		// 파라미터로 받은 주소록에 세션에 있는 유저 아이디 세팅
-    		contacts.setUserId((Integer) session.getAttribute("users"));
+    		contacts.setUserId(users.getId());
     		
     		contactsService.deleteContacts(contacts);
     		map.put("result", "success");

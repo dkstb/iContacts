@@ -24,59 +24,34 @@ public class UsersController {
         @Inject
         UsersService usersService;
         
-        //���̵�(�̸���) �ߺ� üũ
-//        @RequestMapping("/checkOverlap.do")
-//        @ResponseBody
-//        public Object checkOverlap(@ModelAttribute("users") Users users) throws Exception {
-//                System.out.println("checkOverlap controller start....");
-//                
-//                System.out.println("db��:"+users);
-//                
-//                HashMap<String, Object> map= new HashMap<String,Object>();
-//                Users dbUsers = new Users();
-//                dbUsers = (Users)usersService.getUsers(users);
-//                System.out.println("db��:"+dbUsers);
-//                
-//                if(dbUsers == null) {
-//                        map.put("result", "success");
-//                } else {
-//                        map.put("result", "fail");
-//                }
-//                
-//                System.out.println("checkOverlap controller end....");
-//                return map;
-//        }
-        
         //회원 가입
         @RequestMapping("/insertUsers.contact")
         @ResponseBody
         public Object insertUsers(@ModelAttribute("users") Users users,
                         HttpSession session) throws Exception {
-                System.out.println("InsertUssers controller start....");
-                HashMap<String, Object> map= new HashMap<String,Object>();
-                
-                Users dbUsers = new Users();
-                dbUsers = (Users)usersService.getUsers(users);
-                System.out.println("db 후:"+dbUsers);
-                
-                if(dbUsers == null) {
-                        users.setId(usersService.insertUsers(users));
-                        System.out.println("db 후 users:"+users);
+            System.out.println("InsertUssers controller start....");
+            HashMap<String, Object> map= new HashMap<String,Object>();
+            
+            Users dbUsers = new Users();
+            dbUsers = (Users)usersService.getUsers(users);
+            System.out.println("db 후:"+dbUsers);
+            
+            if(dbUsers == null) {
+                users.setId(usersService.insertUsers(users));
+                System.out.println("db 후 users:"+users);
 
-                        map.put("result", "success");
-                        
-//                        // ���ǿ� ������ �̸��� �̸��ϸ� ����
-//                        Users newUsers = new Users();
-//                        newUsers.setName(users.getName());
-//                        newUsers.setEmail(users.getEmail());
-//                        session.setAttribute("users", newUsers);
-//                        map.put("users", newUsers);
-                        
-                } else {
-                        map.put("result", "fail");
-                }
-                return map;
+                map.put("result", "success");
                 
+                // 로그인 상태 만들기 (세션 유지)
+                Users newUsers = new Users();
+                newUsers.setName(users.getName());
+                newUsers.setEmail(users.getEmail());
+                session.setAttribute("users", newUsers);
+                map.put("users", newUsers);
+            } else {
+                map.put("result", "fail");
+            }
+            return map;
         }
         
         // ���̽��� ȸ�� ����

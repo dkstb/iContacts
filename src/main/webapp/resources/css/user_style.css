@@ -14,14 +14,6 @@
 	border: 0
 }
 
-footer {
-	height: 40px;
-	padding-left: 20px;
-	padding-right: 20px;
-	background-color:#57A957;
-}
-
-
 /*********************** 미디어 쿼리 시작 *************************/
 /* Large desktop */
 @media (min-width: 1200px) {

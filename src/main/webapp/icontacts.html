@@ -14,17 +14,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-<link rel="stylesheet" href="../resources/css/bootstrap.css"
+<link rel="stylesheet" href="resources/css/bootstrap.css"
 	type="textcss/css" media="screen" title="notitle" charset="utf-8" />
-<link rel="stylesheet" href="../resources/css/font-awesome.css"
+<link rel="stylesheet" href="resources/css/font-awesome.css"
 	type="textcss/css" media="screen" title="notitle" charset="utf-8" />
-<link rel="stylesheet" href="../resources/css/style.css" type="textcss/css"
+<link rel="stylesheet" href="resources/css/style.css" type="textcss/css"
 	media="screen" title="notitle" charset="utf-8" />
-<link rel="stylesheet" href="css/icontacts_style.css" type="text/css"
+<link rel="stylesheet" href="resources/css/icontacts_style.css" type="text/css"
 	media="screen" title="notitle" charset="utf-8" />
 
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="../resources/js/bootstrap.js"></script>
+<script src="resources/js/bootstrap.js"></script>
 
 <!--[if IE 7]>
   <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
@@ -33,14 +33,19 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
+<script>
+	$(document).ready(function(){
+		$('#header').load('header.html');
+	});
+</script>
 </head>
-
-<body class="contacts-main">
+<body class="contacts_main">
+	<div id="header"></div><!-- header 로딩 -->
 
 	<div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="brand brand" href="../index.html">iContacts</a>
+          <a class="brand brand" href="index.html">iContacts</a>
           <a class="brand brand" href="#">Tour</a>
           <a class="brand brand" href="#">Blog</a>
             <form class="navbar-form pull-right">
@@ -108,10 +113,10 @@
      	
     </footer>
     
-    <script src="../resources/js/insert_contact.js"></script>
-    <script src="../resources/js/select_contact_list.js"></script>
-    <script src="../resources/js/select_contact.js"></script>
-    <script src="../resources/js/update_contact.js"></script>
-    <script src="../resources/js/delete_contact.js"></script>
+    <script src="resources/js/insert_contact.js"></script>
+    <script src="resources/js/select_contact_list.js"></script>
+    <script src="resources/js/select_contact.js"></script>
+    <script src="resources/js/update_contact.js"></script>
+    <script src="resources/js/delete_contact.js"></script>
 </body>
 </html>

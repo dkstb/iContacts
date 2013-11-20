@@ -1,28 +1,26 @@
-$(document).ready(function(){
-        
-        $('#join_btn').click(function(){
-                alert('name' + $('#input_name').val());
-                alert('email' + $('#input_email').val());
-                alert('password' + $('#input_password').val());
-                
-                // ajax 전송
-                $.ajax('/bitschool/ajax/insertUsers.contact', {
-                        type: 'POST',
-                        dataType: 'json',
-                        data: {
-                                name : $('#input_name').val(),
-                                email : $('#input_email').val(),
-                                password : $('#input_password').val()
-                        },                                        
-                        success:function(data){
-                                if(data.result=='success'){
-                                        alert('회원가입이 완료되었습니다.');
-                                } else {
-                                        alert('회원가입이 실패했습니다.');
-                                }
-                        }
-                });
-                
-        });
-        
+$(document).ready(function() {
+
+	$('#join_btn').click(function() {
+
+		// ajax 전송
+		$.ajax('/bitschool/ajax/insertUsers.contact', {
+			type : 'POST',
+			dataType : 'json',
+			data : {
+				name : $('#input_name').val(),
+				email : $('#input_email').val(),
+				password : $('#input_password').val()
+			},
+			success : function(data) {
+				if (data.result == 'success') {
+					alert(data.users.name + '님 반갑습니다.');
+					$(location).attr('href','icontacts.html');
+				} else {
+					alert('중복된 이메일 주소입니다.');
+				}
+			}
+		});
+
+	});
+
 });

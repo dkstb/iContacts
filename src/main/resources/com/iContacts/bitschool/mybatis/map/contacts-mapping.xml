@@ -25,37 +25,34 @@
 		VALUES ( #{userId}, #{name}, #{phoneNum}, #{email}, #{work}, #{homeAddr}, #{webPage}, #{memo} )
 	</insert>
 
-	<!-- Read Contacts -->
-	<select id="getContacts" resultMap="contactsSelectMap"
+	<!-- Read ContactsList -->
+	<select id="getContactsList" resultMap="contactsSelectMap"
 		parameterType="com.iContacts.bitschool.domain.Contacts">
-		SELECT * FROM USER
-		WHERE email = #{email}
+		SELECT name FROM CONTACT
+		WHERE user_id = #{userId}
+	</select>
+	
+	<!-- Read 상세 주소 (클릭) -->
+	<select id="getContact" resultMap="contactsSelectMap" 
+	parameterType="com.iContacts.bitschool.domain.Contacts">
+		SELECT * FROM CONTACT
+		WHERE contact_id = #{id}
 	</select>
 
 	<!-- Update Contacts -->
 	<update id="updateContacts" parameterType="com.iContacts.bitschool.domain.Contacts">
-		UPDATE USERS
-		SET name=#name#, password=#password#, gender=#gender#, age=#age#,
-		profile_image=#profileImage#
-		WHERE user_no = #userNo#
+		UPDATE CONTACT
+		SET name=#{name}, phone_num=#{phoneNum}, email=#{email}, work=#{work}, home_addr=#{homeAddr}, web_page=#{webPage}, memo=#{memo}
+		WHERE contact_id = #{id}
 	</update>
 
 	<!-- Delete Contacts -->
 	<delete id="deleteContacts" parameterType="com.iContacts.bitschool.domain.Contacts">
 		DELETE
-		FROM USERS
-		WHERE user_no = #userNo#
+		FROM CONTACT
+		WHERE contact_id = #{id}
 	</delete>
 
-	<!-- Check Contacts -->
-	<select id="checkContacts" resultMap="contactsSelectMap"
-		parameterType="com.iContacts.bitschool.domain.Contacts">
-		SELECT user_no, email_id, password, name, gender, age, profile_image,
-		g_state
-		FROM USERS
-		WHERE email_id=#emailId#
-	</select>
-	
 	<!-- 전체 유저 삭제(테스트용) -->
 	<delete id="deleteAllContacts">
 		DELETE FROM CONTACT

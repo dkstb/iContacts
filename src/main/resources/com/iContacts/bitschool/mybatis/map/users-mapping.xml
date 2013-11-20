@@ -38,8 +38,8 @@
 	<!-- Delete Users -->
 	<delete id="deleteUsers" parameterType="com.iContacts.bitschool.domain.Users">
 		DELETE
-		FROM USERS
-		WHERE user_no = #userNo#
+		FROM USER
+		WHERE email = #{email}
 	</delete>
 
 	<!-- Check Users -->

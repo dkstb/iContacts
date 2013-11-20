@@ -29,6 +29,13 @@ public class AjaxControlFilter implements Filter {
 
             ((HttpServletResponse) response).setHeader(
                             "Access-Control-Allow-Origin", "*");
+
+            // 유저 아이디 캐스팅
+//            if (request.getAttribute("id") != null) {
+//            	int id = (Integer) request.getAttribute("id");
+//            	request.setAttribute("id", id);
+//			}
+            
             filterChain.doFilter(request, response);
 
             System.out.println("dofilter after");

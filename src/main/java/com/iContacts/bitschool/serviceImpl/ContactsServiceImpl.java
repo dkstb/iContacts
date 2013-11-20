@@ -1,13 +1,17 @@
 package com.iContacts.bitschool.serviceImpl;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
+import org.springframework.stereotype.Repository;
 
 import com.iContacts.bitschool.dao.ContactsDao;
 import com.iContacts.bitschool.domain.Contacts;
 import com.iContacts.bitschool.service.ContactsService;
 
+@Repository
 public class ContactsServiceImpl extends SqlSessionDaoSupport implements
 		ContactsService {
 
@@ -23,27 +27,31 @@ public class ContactsServiceImpl extends SqlSessionDaoSupport implements
 		return contactsDao.insertContacts(contacts);
 	}
 
-	@Override
-	public Contacts getContacts(Contacts contacts) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	@Override	// 주소록 리스트 가져오기
+	public List<Contacts> getContactsList(Contacts contacts) throws Exception {
+		return contactsDao.getContactsList(contacts);
+	}
+	
+	@Override	// 상세 주소 조회
+	public Contacts getContact(Contacts contacts) throws Exception {
+		return contactsDao.getContact(contacts);
 	}
 
 	@Override
 	public int updateContacts(Contacts contacts) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return contactsDao.updateContacts(contacts);
 	}
 
 	@Override
 	public int deleteContacts(Contacts contacts) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return contactsDao.deleteContacts(contacts);
 	}
 
 	@Override
 	public int deleteAllContacts() throws Exception {
 		return contactsDao.deleteAllContacts();
 	}
+
+	
 
 }

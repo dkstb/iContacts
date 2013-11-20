@@ -75,9 +75,9 @@ public class UsersController {
 
 			// 로그인 상태 만들기 (세션 유지)
 			Users sessionUsers = new Users();
-			sessionUsers.setId(dbUsers.getId());
-			sessionUsers.setName(dbUsers.getName());
-			sessionUsers.setEmail(dbUsers.getEmail());
+			sessionUsers.setId(users.getId());
+			sessionUsers.setName(users.getName());
+			sessionUsers.setEmail(users.getEmail());
 			session.setAttribute("users", sessionUsers);
 			map.put("users", sessionUsers);
 			

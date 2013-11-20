@@ -11,6 +11,9 @@ import com.iContacts.bitschool.service.UsersService;
 
 public class MyBatisUsersTest {
 
+	
+	
+	//create test
 //	@Test
 	public void insertUsersTest() throws Exception {
 		ApplicationContext context = new FileSystemXmlApplicationContext(
@@ -29,7 +32,28 @@ public class MyBatisUsersTest {
 		assertNotNull(usersService.insertUsers(users));
 	}
 	
+	//read test
 	@Test
+	public void readUsersTest() throws Exception {
+		ApplicationContext context = new FileSystemXmlApplicationContext(
+				"src/main/webapp/WEB-INF/mybatis/mybatis-context.xml");
+		UsersService usersService = (UsersService) context.getBean("usersServiceImpl");
+		
+		Users users = new Users();
+		users.setEmail("win@hanmail.net");
+		users.setPassword("1234");
+		users.setName("김위나");
+		
+		Users result = usersService.getUsers(users);
+		System.out.println(result.getEmail());
+		
+	}
+	
+	
+	
+	
+	//delete test
+//	@Test
 	public void deleteUsersTest() throws Exception {
 		ApplicationContext context = new FileSystemXmlApplicationContext(
 				"src/main/webapp/WEB-INF/mybatis/mybatis-context.xml");

@@ -1,9 +1,9 @@
 $(document).ready(function(){
         
-        $('#insert_contact').click(function(){
-                
+        $('#update_contact').click(function(){
                 // ajax 전송
-                $.ajax('/bitschool/ajax/insertContact.contact', {
+                $.ajax('/bitschool/ajax/updateContact.contact', {
+                		
                         type: 'POST',
                         dataType: 'json',
                         data: {
@@ -13,15 +13,14 @@ $(document).ready(function(){
                                 work : $('#contact_work').val(),
                                 homeAddr : $('#contact_addr').val(),
                                 webPage : $('#contact_homepage').val(),
-                                memo : $('#contact_memo').val()
+                                memo : $('#contact_memo').val(),
+                                id : $('#contact_id').val()
                         },                                        
                         success:function(data){
-                                if(data.result=='success') {
-                                    alert($('#contact_name').val() + '님이 추가되었습니다.');
-                                } else if (data.result=='nullname') {
-                                	alert('이름은 필수 항목입니다.');
+                                if(data.result=='success'){
+                                        alert($('#contact_name').val() + '님이 수정되었습니다.');
                                 } else {
-                                    alert('주소록 등록이 실패했습니다.');
+                                        alert('주소록 수정이 실패했습니다.');
                                 }
                         }
                 });

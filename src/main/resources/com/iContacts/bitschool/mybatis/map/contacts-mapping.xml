@@ -7,15 +7,15 @@
 <mapper namespace="com.iContacts.bitschool.dao.ContactsDao">
 
 	<resultMap type="com.iContacts.bitschool.domain.Contacts" id="contactsSelectMap">
-		<result property="id" 		column="contact_id" jdbcType="INTEGER" />
-		<result property="userId"	column="user_id"	jdbcType="INTEGER" />
-		<result property="name" 	column="name" 		jdbcType="VARCHAR" />
-		<result property="phoneNum" column="phone_num" 	jdbcType="VARCHAR" />
-		<result property="email" 	column="email" 		jdbcType="VARCHAR" />
-		<result property="work" 	column="work" 		jdbcType="VARCHAR" />
-		<result property="homeAddr" column="home_addr"	jdbcType="VARCHAR" />
-		<result property="webPage" 	column="web_page"	jdbcType="VARCHAR" />
-		<result property="memo" 	column="memo" 		jdbcType="VARCHAR" />
+		<result property="id" 		column="contact_id" />
+		<result property="userId"	column="user_id"	/>
+		<result property="name" 	column="name" 	 />
+		<result property="phoneNum" column="phone_num" 	 />
+		<result property="email" 	column="email" 		 />
+		<result property="work" 	column="work" 		 />
+		<result property="homeAddr" column="home_addr"	 />
+		<result property="webPage" 	column="web_page"	 />
+		<result property="memo" 	column="memo" 		 />
 	</resultMap>
 
 	<!-- Create Contacts -->
@@ -28,14 +28,19 @@
 	<!-- Read ContactsList -->
 	<select id="getContactsList" resultMap="contactsSelectMap"
 		parameterType="com.iContacts.bitschool.domain.Contacts">
-		SELECT name FROM CONTACT
+		SELECT name, contact_id FROM CONTACT
 		WHERE user_id = #{userId}
 	</select>
 	
 	<!-- Read 상세 주소 (클릭) -->
 	<select id="getContact" resultMap="contactsSelectMap" 
 	parameterType="com.iContacts.bitschool.domain.Contacts">
-		SELECT * FROM CONTACT
+		SELECT c.contact_id, u.user_id, c.name, c.phone_num, c.email, c.work, c.home_addr,
+		c.web_page, c.memo 
+		FROM CONTACT c
+		join user u
+		on
+		c.user_id = u.user_id
 		WHERE contact_id = #{id}
 	</select>
 

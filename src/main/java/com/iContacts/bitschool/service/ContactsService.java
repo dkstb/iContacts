@@ -3,6 +3,7 @@ package com.iContacts.bitschool.service;
 import java.util.List;
 
 import com.iContacts.bitschool.domain.Contacts;
+import com.iContacts.bitschool.domain.Users;
 
 public interface ContactsService {
 	public int insertContacts(Contacts contacts) throws Exception;	// 주소록 생성
@@ -12,5 +13,5 @@ public interface ContactsService {
     public int deleteContacts(Contacts contacts) throws Exception;
     
     // 테스트용 전체 연락처 삭제
-    public int deleteAllContacts() throws Exception;
+    public int deleteAllContacts(Users users) throws Exception;
 }

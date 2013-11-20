@@ -8,8 +8,8 @@
 					<a href="#" class="btn btn-custom dropdown-toggle" data-toggle="dropdown">Login</a>
 					<div class="dropdown-menu login-form">
 						<form>
-							<input id="header_email" type="email" name="login_email" size="40" placeholder="Id">
-							<input id="header_password" type="password" name="login_password" size="40"placeholder="Password">
+							<input id="header_email" type="email" placeholder="Email">
+							<input id="header_password" type="password" placeholder="Password">
 							<button id="header_login_btn" type="button" class="btn btn-primary">Log in</button>
 						</form>
 					</div> <!-- div(dropdown-menu) -->
@@ -22,8 +22,8 @@
 						<span id="account_name"></span><span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="#">Account</a></li>
-						<li><a href="#">Log out</a></li>
+						<li><a href="user.html">Account</a></li>
+						<li id="header_logout_btn" ><a href="#">Log out</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -31,3 +31,6 @@
 	</div>
 </div>
 <script src="resources/js/header.js"></script>
+<script src="resources/js/login.js"></script>
+<script src="resources/js/logout.js"></script>
+

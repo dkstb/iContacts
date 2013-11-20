@@ -29,17 +29,15 @@
 
 	<!-- Update Users -->
 	<update id="updateUsers" parameterType="com.iContacts.bitschool.domain.Users">
-		UPDATE USERS
-		SET name=#name#, password=#password#, gender=#gender#, age=#age#,
-		profile_image=#profileImage#
-		WHERE user_no = #userNo#
+		UPDATE user set name= #{name}, email=#{email}, password=#{password}
+		WHERE user_id = #{id}
 	</update>
 
 	<!-- Delete Users -->
 	<delete id="deleteUsers" parameterType="com.iContacts.bitschool.domain.Users">
 		DELETE
 		FROM USER
-		WHERE email = #{email}
+		WHERE user_id = #{id}
 	</delete>
 
 	<!-- Check Users -->

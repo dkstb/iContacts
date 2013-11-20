@@ -7,6 +7,13 @@ body {
 	background-color:#fff;
 	color:#57A957;
 }
+/***************** 헤더 로그인 시작 ***************************/
+
+.dropdown-menu.login-form {
+	padding: 15px 15px 0 15px; 
+}
+
+/***************** 헤더 로그인 끝 ***************************/ 
 
 .btn {
 	margin-left: 10px;

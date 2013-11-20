@@ -4,21 +4,21 @@
 			<a class="brand" href="index.html">iContacts</a> <a class="brand"
 				href="#">Tour</a> <a class="brand" href="#">Blog</a>
 			<ul>
-				<li class="dropdown pull-right">
+				<li class="dropdown pull-right" id="header_login">
 				<a href="#" class="btn btn-custom dropdown-toggle" data-toggle="dropdown">Login</a>
 					<div class="dropdown-menu login-form">
 						<form method="post" action="login" accept-character="UTF-8">
-							<input type="email" name="login_email" size="40" placeholder="Id">
-							<input type="password" name="login_password" size="40"placeholder="Password">
-							<button type="button" class="btn btn-primary">Log in</button>
+							<input id="header_email" type="email" name="login_email" size="40" placeholder="Id">
+							<input id="header_password" type="password" name="login_password" size="40"placeholder="Password">
+							<button id="header_login_btn" type="button" class="btn btn-primary">Log in</button>
 						</form>
 					</div> <!-- div(dropdown-menu) --></li>
-				<li class="nav pull-right"><a class="btn btn-custom"
+				<li class="nav pull-right" id="header_signup"><a class="btn btn-custom"
 					href="sign_up.html">Sign up</a>
 				<li>
-				<div class="btn-group pull-right hidden">
+				<div class="btn-group pull-right" id="header_account" style="display:none">
 					<button class="btn btn-custom dropdown-toggle" type="button" data-toggle="dropdown">
-						<!-- 계정 이름 --><span class="caret"></span>
+						<span id="account_name"></span><span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu">
 						<li><a href="#">Account</a></li>
@@ -29,3 +29,4 @@
 		</div>
 	</div>
 </div>
+<script src="resources/js/header.js"></script>

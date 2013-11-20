@@ -74,14 +74,11 @@ public class ContactsController {
             System.out.println("SelectContactList controller start....");
             HashMap<String, Object> map= new HashMap<String,Object>();
             List<Contacts> contactList;
-            // 유저 생성 (테스트용)
-
-    		users.setId(107);
+            
+            
+    		users = ((Users)session.getAttribute("users"));
     
-    		// 세션에 유저 아이디 등록 (로그인)
-    		session.setAttribute("users", users.getId());
-    	
-    		contacts.setUserId((Integer) session.getAttribute("users"));
+    		contacts.setUserId(users.getId());
     		contactList = contactsService.getContactsList(contacts);
     		System.out.println("주소록 리스트 : " + contactList);
     		map.put("result", "success");

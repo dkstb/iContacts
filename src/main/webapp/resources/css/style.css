@@ -20,16 +20,8 @@ body {
 }
 
 /* 공통 가운데 컨테이너 박스 */
-.container.text-center h1 {
+.container.text-center {
 	padding-top: 110px;
-	margin-top: 40px;
-	font-size: 400%;
-	font-weight: bold;
-}
-
-/* 공통 가운데 컨테이너 박스 forgot */
-.container.text-center h2 {
-	padding-top: 60px;
 	margin-top: 40px;
 	font-size: 400%;
 	font-weight: bold;

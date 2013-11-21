@@ -10,7 +10,7 @@ $(document).ready(function() {
 				$('#header_signup').attr('style', 'display:none');
 				$('#header_icontact').removeAttr('style');
 				$('#header_account').removeAttr('style');
-				$('#account_name').text(data.users.name + ' 님');
+				$('#account_name').text(data.users.name + ' 님 ');
 			} else if (data.result == 'logout'){
 				$('#header_account').attr('style', 'display:none');
 				$('#header_icontact').attr('style', 'display:none');

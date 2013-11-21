@@ -30,6 +30,7 @@
 		parameterType="com.iContacts.bitschool.domain.Contacts">
 		SELECT name, contact_id FROM CONTACT
 		WHERE user_id = #{userId}
+		ORDER BY name ASC
 	</select>
 	
 	<!-- Read 상세 주소 (클릭) -->

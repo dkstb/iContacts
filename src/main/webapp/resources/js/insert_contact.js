@@ -12,7 +12,7 @@ $(document).ready(function(){
 		$('#insert_contact').remove();
 		$('#update_contact').remove();
 		$('#delete_contact').remove();
-		$('#detail_contact').append('<button id="insert_contact" type="button" class="btn btn-info pull-right">Save</button>');
+		$('#detail_contact').append('<button id="insert_contact" type="button" class="btn btn-success pull-right"><i class="fa fa-check"></i> Save</button>');
 	});
         
 	$(document).on('click', '#insert_contact', function(){

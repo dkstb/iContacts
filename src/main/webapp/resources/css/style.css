@@ -107,7 +107,6 @@ footer {
 	.offset4 {
 		margin-left: 400px;
 	}
-	
 	.contacts_main footer{
 		position: fixed;
 	}
@@ -131,6 +130,7 @@ footer {
 }
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
+	
 	.navbar-fixed-top, .navbar-fixed-bottom {
 		position: fixed;
 	}
@@ -151,9 +151,17 @@ footer {
 
 }
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
+@media (min-width: 479px) and (max-width: 767px) {
 	.navbar-fixed-top, .navbar-fixed-bottom {
 		position: fixed;
+	}
+	
+	/*로그인 버튼 고정*/
+	.navbar .btn, .navbar .btn-group {
+		margin-right: 20px;
+	}
+	.navbar .brand {
+    	margin-left: 20px;
 	}
 	.container.text-center h1 {
 		padding-top: 40px;
@@ -167,6 +175,14 @@ footer {
 }
 /* Landscape phones and down */
 @media (max-width: 480px) {
+	
+	/*로그인 버튼 고정*/
+	.navbar .btn, .navbar .btn-group {
+		margin-right: 20px;
+	}
+	.navbar .brand {
+    	margin-left: 20px;
+	}
 	.navbar-fixed-top, .navbar-fixed-bottom {
 		position: fixed;
 	}

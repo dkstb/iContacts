@@ -82,6 +82,14 @@ public class ContactsController {
     		contacts.setUserId(users.getId());
     		
     		contactList = contactsService.getContactsList(contacts);
+    		
+    		// 주소록 리스트 널체크
+    		if (contactList.size()==0) {
+				map.put("result", "noContacts");
+				System.out.println("주소록 하나도 없다고 알림.");
+				return map;
+			}
+    		
     		System.out.println("주소록 리스트 : " + contactList);
     		map.put("result", "success");
     		map.put("contactList", contactList);
@@ -99,6 +107,12 @@ public class ContactsController {
             
             System.out.println("요청 들어온 contacs : " + contacts);
     		contacts = contactsService.getContact(contacts);
+    		
+    		// 상세주소 널체크
+    		if (contacts == null) {
+				map.put("result", "noContact");
+				return map;
+			}
     		
     		map.put("result", "success");
     		map.put("contacts", contacts);

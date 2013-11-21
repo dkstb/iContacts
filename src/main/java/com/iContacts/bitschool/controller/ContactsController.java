@@ -74,6 +74,12 @@ public class ContactsController {
             
             // 세션에서 로그인 한 유저 정보 가져오기
     		users = ((Users)session.getAttribute("users"));
+    		
+    		if(users == null){
+                map.put("result", "logout");
+                System.out.println("SelectContactList Controller end...");
+                return map;
+    		}
     
     		contacts.setUserId(users.getId());
     		contactList = contactsService.getContactsList(contacts);

@@ -65,14 +65,14 @@ public class UsersController {
 			HttpSession session) throws Exception {
 		System.out.println("InsertUssers controller start....");
 		HashMap<String, Object> map = new HashMap<String, Object>();
-
+		
+		// 동일 이메일 체크
 		Users dbUsers = new Users();
 		dbUsers = (Users) usersService.checkUsers(users);
 		System.out.println("db 후:" + dbUsers);
 
 		if (dbUsers == null) {
-			users.setId(usersService.insertUsers(users));
-			System.out.println("db 후 users:" + users);
+			usersService.insertUsers(users);
 
 			map.put("result", "success");
 

@@ -4,7 +4,6 @@ $(document).ready(function() {
 	$.ajax('/bitschool/ajax/selectUsers.contact', {
 		type : 'GET',
 		dataType : 'json',
-		
 		success : function(data) {
 			var users = data.users;	
 			$('#user_id').val(users.id);

@@ -6,6 +6,7 @@ $(document).ready(function() {
 		$.ajax('/bitschool/ajax/insertUsers.contact', {
 			type : 'POST',
 			dataType : 'json',
+			
 			data : {
 				name : $('#input_name').val(),
 				email : $('#input_email').val(),

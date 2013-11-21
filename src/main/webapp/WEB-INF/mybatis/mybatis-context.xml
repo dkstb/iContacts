@@ -12,7 +12,7 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<!-- 아래는 컨트롤단 테스트 시 이용 -->
-			<!-- <value>src/main/webapp/WEB-INF/mybatis/jdbc.properties</value> -->
+<!-- 			<value>src/main/webapp/WEB-INF/mybatis/jdbc.properties</value> -->
 			<!-- 아래는 웹 테스트 및 실제 서비스 시 이용 -->
 			<value>/WEB-INF/mybatis/jdbc.properties</value>
 		</property>

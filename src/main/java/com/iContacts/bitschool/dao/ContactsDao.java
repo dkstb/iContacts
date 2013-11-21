@@ -3,7 +3,6 @@ package com.iContacts.bitschool.dao;
 import java.util.List;
 
 import com.iContacts.bitschool.domain.Contacts;
-import com.iContacts.bitschool.domain.Users;
 
 public interface ContactsDao {
 	public int insertContacts(Contacts contacts) throws Exception;	// 주소록 생성
@@ -11,7 +10,7 @@ public interface ContactsDao {
     public Contacts getContact(Contacts contacts) throws Exception;				// 상세 주소 조회
     public int updateContacts(Contacts contacts) throws Exception;
     public int deleteContacts(Contacts contacts) throws Exception;
-    public int deleteAllContacts(Users users) throws Exception;
+    public int deleteAllContacts(Contacts contacts) throws Exception;
     
     // 테스트용 전체 연락처 삭제
 	public int deleteAllContactsForTest();

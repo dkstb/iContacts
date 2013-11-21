@@ -191,30 +191,30 @@ public class UsersController {
         
         
      //   User 삭제
-        @RequestMapping("/deleteUser.contact")
-        @ResponseBody
-        public Object deleteUser(@ModelAttribute("users") Contacts contacts, Users users,
-                        HttpSession session) throws Exception {
-            System.out.println("DeleteContact controller start....");
-            HashMap<String, Object> map= new HashMap<String,Object>();
-            
-            System.out.println("주소록 : " + contacts);
-            
-            // 세션에서 로그인 한 유저 정보 가져오기
-    		users = ((Users)session.getAttribute("users"));
-    		
-    		// 파라미터로 받은 주소록에 세션에 있는 유저 아이디 세팅
-    		contacts.setUserId(users.getId());
-    		
-    		contactsService.deleteAllContacts(users);   		
-    		usersService.deleteUsers(users);
-    		map.put("result", "success");
-    		
-    		//로그아웃
-    		session.removeAttribute("users");
-    		
-    		return map;
-        }
+    @RequestMapping("/deleteUser.contact")
+    @ResponseBody
+    public Object deleteUser(Contacts contacts, Users users,
+                    HttpSession session) throws Exception {
+        System.out.println("DeleteContact controller start....");
+        HashMap<String, Object> map= new HashMap<String,Object>();
+        
+        System.out.println("주소록 : " + contacts);
+        
+        // 세션에서 로그인 한 유저 정보 가져오기
+		users = ((Users)session.getAttribute("users"));
+		
+		// 파라미터로 받은 주소록에 세션에 있는 유저 아이디 세팅
+		contacts.setUserId(users.getId());
+		
+		contactsService.deleteAllContacts(contacts);   		
+		usersService.deleteUsers(users);
+		map.put("result", "success");
+		
+		//로그아웃
+		session.removeAttribute("users");
+		
+		return map;
+    }
         
         
         

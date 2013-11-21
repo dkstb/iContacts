@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.iContacts.bitschool.dao.ContactsDao;
 import com.iContacts.bitschool.domain.Contacts;
-import com.iContacts.bitschool.domain.Users;
 
 @Repository
 public class ContactsDaoImpl extends SqlSessionDaoSupport implements ContactsDao {
@@ -43,8 +42,8 @@ public class ContactsDaoImpl extends SqlSessionDaoSupport implements ContactsDao
 	}
 
 	@Override	// 특정인 전체 주소 삭제
-	public int deleteAllContacts(Users users) throws Exception {
-		return getSqlSession().delete("com.iContacts.bitschool.dao.ContactsDao.deleteAllContacts", users);
+	public int deleteAllContacts(Contacts contacts) throws Exception {
+		return getSqlSession().delete("com.iContacts.bitschool.dao.ContactsDao.deleteAllContacts", contacts);
 	}
 
 	@Override	// 테스트용 주소록 전체 삭제

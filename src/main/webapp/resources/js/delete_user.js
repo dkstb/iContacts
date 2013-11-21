@@ -10,7 +10,7 @@ $(document).ready(function() {
 			},
 			success : function(data) {
 				if (data.result == 'success') {
-					alert($('#user_id').val() + '님이 삭제되었습니다.');
+					alert($('#name').val() + '님이 삭제되었습니다.');
 					$(location).attr('href','index.html');
 				} else {
 					alert('삭제가 실패했습니다.');

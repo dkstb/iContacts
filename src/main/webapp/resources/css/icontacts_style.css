@@ -24,7 +24,13 @@ thead {
 	background-color:#57A957;
 }
 
-.contacts-list .form-inline button {
-	border: 0px;
-	padding: 1px 30px;
+.contacts-list button {
+	padding-right: 31px;
+	padding-left: 31px;
+}
+
+.contacts_main .table {
+	width: 100%;
+	margin-bottom: 20px;
+	margin-top: 10px;
 }

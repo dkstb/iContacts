@@ -1,6 +1,6 @@
 $(document).ready(function(){
         
-        $('#insert_contact').click(function(){
+		$(document).on('click', '#insert_contact', function(){
                 
                 // ajax 전송
                 $.ajax('/bitschool/ajax/insertContact.contact', {

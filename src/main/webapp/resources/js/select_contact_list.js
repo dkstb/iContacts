@@ -34,7 +34,6 @@ $(document).ready(function() {
 		},
 		async : false,
 		success : function(data) {
-			console.log('주소록 첫줄 주소 아이디 : ' + contact_id[0]);
 			var contacts = data.contacts;
 			$('#contact_id').val(contacts.id);
 			$('#contact_name').val(contacts.name);
@@ -44,6 +43,13 @@ $(document).ready(function() {
 			$('#contact_homepage').val(contacts.webPage);
 			$('#contact_addr').val(contacts.homeAddr);
 			$('#contact_memo').val(contacts.memo);
+			
+			// edit, delete 버튼 생성
+			$('#insert_contact').remove();
+			$('#update_contact').remove();
+			$('#delete_contact').remove();
+			$('#detail_contact').append('<button id="delete_contact" type="button" class="btn btn-danger pull-right">Delete</button>')
+			.append('<button id="update_contact" type="button" class="btn btn-info pull-right">Edit</button>');
 		}
 	});
 	

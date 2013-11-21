@@ -104,8 +104,26 @@ footer {
 /*********************** 미디어 쿼리 시작 *************************/
 /* Large desktop */
 @media (min-width: 1200px) {
+	.offset4 {
+		margin-left: 400px;
+	}
+	
+	.contacts_main footer{
+		position: fixed;
+	}
+	footer{
+		position: fixed;
+	}
 }
 @media (min-width: 980px) and (max-width: 1199px) {
+	
+
+	.contacts_main footer{
+		visibility:hidden;
+	}
+	footer{
+		visibility:hidden;
+	}
 }
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
@@ -115,6 +133,13 @@ footer {
 	.container.text-center h1 {
 		padding-top: 40px;
 	}
+	.contacts_main footer{
+		visibility:hidden;
+	}
+	footer{
+		visibility:hidden;
+	}
+
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
@@ -123,6 +148,12 @@ footer {
 	}
 	.container.text-center h1 {
 		padding-top: 40px;
+	}
+	.contacts_main footer{
+		visibility:hidden;
+	}
+	footer{
+		visibility:hidden;
 	}
 }
 /* Landscape phones and down */
@@ -133,5 +164,12 @@ footer {
 	.container.text-center h1 {
 		padding-top: 40px;
 	}
+	.contacts_main footer{
+		visibility:hidden;
+	}
+	footer{
+		visibility:hidden;
+	}
+	
 }
 /*********************** 미디어 쿼리 끝 *************************/

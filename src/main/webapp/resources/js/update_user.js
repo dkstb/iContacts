@@ -15,6 +15,7 @@ $(document).ready(function(){
                     success:function(data){
                             if(data.result=='success'){
                                     alert($('#name').val() + '님이 수정되었습니다.');
+                                    $(location).attr('href','icontacts.html');      
                             } else {
                                     alert('주소록 수정이 실패했습니다.');
                             }

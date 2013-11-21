@@ -1,93 +1,79 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="utf-8" />
-
-<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-<title>iContacts</title>
-<meta name="description" content="" />
-<meta name="author" content="" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-<link rel="stylesheet" href="resources/css/bootstrap.css"
-	type="textcss/css" media="screen" title="notitle" charset="utf-8" />
-<link rel="stylesheet" href="resources/css/font-awesome.css"
-	type="textcss/css" media="screen" title="notitle" charset="utf-8" />
-<link rel="stylesheet" href="resources/css/style.css" type="textcss/css"
-	media="screen" title="notitle" charset="utf-8" />
-<link rel="stylesheet" href="resources/css/icontacts_style.css" type="text/css"
-	media="screen" title="notitle" charset="utf-8" />
-
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="resources/js/bootstrap.js"></script>
-
-<!--[if IE 7]>
-  <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
-<![endif]-->
-<!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
-<script>
-	$(document).ready(function(){
-		$('#header').load('header.html');
-	});
-</script>
-</head>
-<body class="contacts_main">
-	<div id="header"></div><!-- header 로딩 -->
-
-	<div class="container">
-		<div class="row">
-			<div class="span12">
-				<div class="row">
-					<div class="span3 contacts-list">
-						<legend>All Contacts</legend>
-						<form class="form-search">
-						    <input type="text" class="input-medium search-query" placeholder="Search">
-						</form>
-						<table id="contact_list" class="table table-bordered table-hover">
-						</table>
-						<button id="plus_contact" class="btn-success"><i class="icon-plus"></i></button>
-					</div>
-					<div class="span9 contact">
-						<legend>Contact</legend>
-						<div class="row">
-							<div class="span9">
-							    <input id="contact_name" type="text" placeholder="Name" class="span9" required>
-							    <input id="contact_phone_num" type="text" placeholder="Mobile Phone" class="span9">
-							    <input id="contact_work" type="text" placeholder="Work" class="span9">
-							    <input id="contact_email" type="text" placeholder="Email" class="span9">
-							</div>
+	<head>
+	<meta charset="utf-8" />
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame Remove this if you use the .htaccess -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+	<title>iContacts</title>
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+	<link rel="stylesheet" href="resources/css/bootstrap.css" type="textcss/css" media="screen" title="notitle" charset="utf-8" />
+	<link rel="stylesheet" href="resources/css/font-awesome.css" type="textcss/css" media="screen" title="notitle" charset="utf-8" />
+	<link rel="stylesheet" href="resources/css/style.css" type="textcss/css" media="screen" title="notitle" charset="utf-8" />
+	<link rel="stylesheet" href="resources/css/icontacts_style.css" type="text/css" media="screen" title="notitle" charset="utf-8" />
+	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="resources/js/bootstrap.js"></script>
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="css/font-awesome-ie7.min.css">
+	<![endif]-->
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script>
+		$(document).ready(function(){
+			$('#header').load('header.html');
+		});
+	</script>
+	</head>
+	<body class="contacts_main">
+		<div id="header"></div><!-- header 로딩 -->
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<div class="row">
+						<div class="span3 contacts-list">
+							<legend>All Contacts</legend>
+							<form class="form-search">
+							    <input type="text" class="input-medium search-query" placeholder="Search">
+							    <button id="plus_contact" class="btn">
+							    &nbsp;&nbsp;&nbsp;<i class="icon-plus"></i>&nbsp;&nbsp;&nbsp;</button>
+							</form>
+							<table id="contact_list" class="table table-bordered table-hover">
+							</table>
 						</div>
-						<div class="row">
-							<div class="span9" id="detail_contact">
-								<input id="contact_homepage" type="text" placeholder="Homepage" class="span9">
-							    <input id="contact_addr" type="text" placeholder="Address" class="span9">
-							    <textarea id="contact_memo" rows="6" placeholder="Memo" class="span9"></textarea>
-							    <input id="contact_id" type="hidden">
+						<div class="span9 contact">
+							<legend>Contact</legend>
+							<div class="row">
+								<div class="span9">
+								    <input id="contact_name" type="text" placeholder="Name" class="span9" required>
+								    <input id="contact_phone_num" type="text" placeholder="Mobile Phone" class="span9">
+								    <input id="contact_work" type="text" placeholder="Work" class="span9">
+								    <input id="contact_email" type="text" placeholder="Email" class="span9">
+								</div>
+							</div>
+							<div class="row">
+								<div class="span9" id="detail_contact">
+									<input id="contact_homepage" type="text" placeholder="Homepage" class="span9">
+								    <input id="contact_addr" type="text" placeholder="Address" class="span9">
+								    <textarea id="contact_memo" rows="6" placeholder="Memo" class="span9"></textarea>
+								    <input id="contact_id" type="hidden">
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- /container -->
-
-	<footer class="navbar navbar-fixed-bottom">
-     	
-    </footer>
-    
-    <script src="resources/js/insert_contact.js"></script>
-    <script src="resources/js/select_contact_list.js"></script>
-    <script src="resources/js/select_contact.js"></script>
-    <script src="resources/js/update_contact.js"></script>
-    <script src="resources/js/delete_contact.js"></script>
-</body>
+		<!-- /container -->
+		<footer class="navbar navbar-fixed-bottom">
+		
+	    </footer>
+	    <script src="resources/js/insert_contact.js"></script>
+	    <script src="resources/js/select_contact_list.js"></script>
+	    <script src="resources/js/select_contact.js"></script>
+	    <script src="resources/js/update_contact.js"></script>
+	    <script src="resources/js/delete_contact.js"></script>
+	</body>
 </html>

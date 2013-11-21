@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$('#delete_contact').click(function() {
+	$(document).on('click', '#delete_contact', function(){
 		// ajax 전송
 		$.ajax('/bitschool/ajax/deleteContact.contact', {
 

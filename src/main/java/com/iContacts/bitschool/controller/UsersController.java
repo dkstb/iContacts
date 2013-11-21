@@ -66,6 +66,12 @@ public class UsersController {
 		System.out.println("InsertUssers controller start....");
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
+		// 이메일 널체크
+		if (users.getEmail().equals("")) {
+			map.put("result", "nullEmail");
+			return map;
+		} 
+		
 		// 동일 이메일 체크
 		Users dbUsers = new Users();
 		dbUsers = (Users) usersService.checkUsers(users);
@@ -176,19 +182,36 @@ public class UsersController {
                 System.out.println("UpdateUsers Controller start...");
                 HashMap<String, Object> map = new HashMap<String, Object>();
 
-                System.out.println(" 내정보 : "+users);
+                System.out.println("요청 받은 수정 정보 : "+users);
                 
-                if(usersService.updateUsers(users)==1){
-                        map.put("result", "success");
-                        System.out.println("db after");
-                }else{
-                        map.put("result", "fail");
-                }
-                                        
+                // 이메일 널체크
+        		if (users.getEmail().equals("")) {
+    				map.put("result", "nullEmail");
+    				return map;
+    			} 
+        		
+        		// 동일 이메일 체크
+        		Users dbUsers = new Users();
+        		dbUsers = (Users) usersService.checkUsers(users);
+        		System.out.println("db 후:" + dbUsers);
+        		
+        		if (dbUsers == null) {
+        			usersService.updateUsers(users);
+        			map.put("result", "success");
+
+        			// 로그인 상태 만들기 (세션 유지)
+        			Users sessionUsers = new Users();
+        			sessionUsers = usersService.getUsers(users);	// 세션에 담을 유저 정보 디비에서 가져옴.
+        			session.setAttribute("users", sessionUsers);
+        			map.put("users", sessionUsers);
+        			
+        		} else {
+        			map.put("result", "fail");
+        		}
+                
                 System.out.println("UpdateUsers Controller end...");
                 return map;
         }
-        
         
      //   User 삭제
     @RequestMapping("/deleteUser.contact")

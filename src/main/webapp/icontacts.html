@@ -55,21 +55,11 @@
 						</table>
 						<form class="form-inline">
 							<button id="plus_contact" class="btn-success"><i class="icon-plus"></i></button>
-							<button id="minus_contact" class="pull-right btn-success"><i class="icon-minus"></i></button>
 						</form>
 					</div>
 					<div class="span9 contact">
 						<legend>Contact</legend>
 						<div class="row">
-<!-- 							<div class="span2"> -->
-<!-- 								<img src="img/wina_img.png" class="img-polaroid"> -->
-<!-- 								File Button  -->
-<!-- 								<div class="control-group"> -->
-<!-- 								  <div class="controls"> -->
-<!-- 								    <input id="filebutton" name="filebutton" class="input-file" type="file"> -->
-<!-- 								  </div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
 							<div class="span9">
 							    <input id="contact_name" type="text" placeholder="Name" class="span9" required>
 							    <input id="contact_phone_num" type="text" placeholder="Mobile Phone" class="span9">
@@ -78,14 +68,12 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="span9">
+							<div class="span9" id="detail_contact">
 								<input id="contact_homepage" type="text" placeholder="Homepage" class="span9">
 							    <input id="contact_addr" type="text" placeholder="Address" class="span9">
 							    <textarea id="contact_memo" rows="6" placeholder="Memo" class="span9"></textarea>
 							    <input id="contact_id" type="hidden">
-							    <button id="delete_contact" type="button" class="btn btn-danger pull-right">Delete</button>
 <!-- 							    <button id="insert_contact" type="button" class="btn btn-info pull-right">Save</button> -->
-<!-- 							    <button id="update_contact" type="button" class="btn btn-warning pull-right">Edit</button> -->
 							</div>
 						</div>
 					</div>
@@ -99,7 +87,6 @@
      	
     </footer>
     
-    <script src="resources/js/edit_save.js"></script>
     <script src="resources/js/insert_contact.js"></script>
     <script src="resources/js/select_contact_list.js"></script>
     <script src="resources/js/select_contact.js"></script>

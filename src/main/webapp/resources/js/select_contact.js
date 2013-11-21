@@ -24,6 +24,21 @@ $(document).ready(function() {
 				$('#contact_memo').val(contacts.memo);
 			}
 		});
+		
+		// edit, delete 버튼 생성
+		$('#insert_contact').remove();
+		$('#update_contact').remove();
+		$('#delete_contact').remove();
+		$('#detail_contact').append('<button id="delete_contact" type="button" class="btn btn-danger pull-right">Delete</button>')
+		.append('<button id="update_contact" type="button" class="btn btn-info pull-right">Edit</button>');
+	});
+	
+	// 주소록 추가 버튼 클릭시 save 버튼 생성
+	$(document).on('click', '#plus_contact', function(){
+		$('#insert_contact').remove();
+		$('#update_contact').remove();
+		$('#delete_contact').remove();
+		$('#detail_contact').append('<button id="insert_contact" type="button" class="btn btn-info pull-right">Save</button>');
 	});
 	
 });

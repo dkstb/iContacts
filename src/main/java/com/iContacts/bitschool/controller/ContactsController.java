@@ -74,14 +74,13 @@ public class ContactsController {
             
             // 세션에서 로그인 한 유저 정보 가져오기
     		users = ((Users)session.getAttribute("users"));
-    		
     		if(users == null){
                 map.put("result", "logout");
                 System.out.println("SelectContactList Controller end...");
                 return map;
     		}
-    
     		contacts.setUserId(users.getId());
+    		
     		contactList = contactsService.getContactsList(contacts);
     		System.out.println("주소록 리스트 : " + contactList);
     		map.put("result", "success");
@@ -98,6 +97,7 @@ public class ContactsController {
             System.out.println("SelectContact controller start....");
             HashMap<String, Object> map= new HashMap<String,Object>();
             
+            System.out.println("요청 들어온 contacs : " + contacts);
     		contacts = contactsService.getContact(contacts);
     		
     		map.put("result", "success");

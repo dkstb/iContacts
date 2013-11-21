@@ -18,39 +18,59 @@ $(document).ready(function() {
 							.text(contactList[i].name))
 							.appendTo('#contact_list');
 				}
+				
+				// 주소록 리스트 첫줄 상세 주소 조회
+				$.ajax('/bitschool/ajax/selectContact.contact', {
+					type : 'POST',
+					dataType : 'json',
+					data : {
+						id : contact_id[0]
+					},
+					success : function(data) {
+						var contacts = data.contacts;
+						$('#contact_id').val(contacts.id);
+						$('#contact_name').val(contacts.name);
+						$('#contact_phone_num').val(contacts.phoneNum);
+						$('#contact_work').val(contacts.work);
+						$('#contact_email').val(contacts.email);
+						$('#contact_homepage').val(contacts.webPage);
+						$('#contact_addr').val(contacts.homeAddr);
+						$('#contact_memo').val(contacts.memo);
+						
+						// save, delete 버튼 생성
+						$('#insert_contact').remove();
+						$('#update_contact').remove();
+						$('#delete_contact').remove();
+						$('#detail_contact').append('<button id="delete_contact" type="button" class="btn btn-danger pull-right">Delete</button>')
+						.append('<button id="update_contact" type="button" class="btn btn-info pull-right">Save</button>');
+					}
+				});
+				
 			} else if(data.result=='logout') {
 				alert('로그인을 해주세요');
 				$(location).attr('href','index.html');
+			} else if (data.result=='noContacts') {
+				$('#insert_contact').remove();
+				$('#update_contact').remove();
+				$('#delete_contact').remove();
+				$('#detail_contact').append('<button id="insert_contact" type="button" class="btn btn-info pull-right">Save</button>');
 			}
 		}
 	});
 	
-	// 주소록 리스트 첫줄 상세 주소 조회
-	$.ajax('/bitschool/ajax/selectContact.contact', {
-		type : 'POST',
-		dataType : 'json',
-		data : {
-			id : contact_id[0]
-		},
-		async : false,
-		success : function(data) {
-			var contacts = data.contacts;
-			$('#contact_id').val(contacts.id);
-			$('#contact_name').val(contacts.name);
-			$('#contact_phone_num').val(contacts.phoneNum);
-			$('#contact_work').val(contacts.work);
-			$('#contact_email').val(contacts.email);
-			$('#contact_homepage').val(contacts.webPage);
-			$('#contact_addr').val(contacts.homeAddr);
-			$('#contact_memo').val(contacts.memo);
-			
-			// edit, delete 버튼 생성
-			$('#insert_contact').remove();
-			$('#update_contact').remove();
-			$('#delete_contact').remove();
-			$('#detail_contact').append('<button id="delete_contact" type="button" class="btn btn-danger pull-right">Delete</button>')
-			.append('<button id="update_contact" type="button" class="btn btn-info pull-right">Save</button>');
-		}
+	// 주소록 추가 버튼 클릭시 save 버튼 생성
+	$(document).on('click', '#plus_contact', function(){
+		$('#contact_name').val('');
+        $('#contact_phone_num').val('');
+        $('#contact_email').val('');
+        $('#contact_work').val('');
+        $('#contact_addr').val('');
+        $('#contact_homepage').val('');
+        $('#contact_memo').val('');
+		$('#insert_contact').remove();
+		$('#update_contact').remove();
+		$('#delete_contact').remove();
+		$('#detail_contact').append('<button id="insert_contact" type="button" class="btn btn-info pull-right">Save</button>');
 	});
 	
 });

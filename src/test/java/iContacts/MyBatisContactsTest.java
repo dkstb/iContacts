@@ -89,7 +89,7 @@ public class MyBatisContactsTest {
 	private Contacts contactsInit(ContactsService contactsService,
 			UsersService usersService) throws Exception {
 		// 테스트 초기화
-		contactsService.deleteAllContacts();	// 모든 주소록 삭제
+		contactsService.deleteAllContactsForTest();	// 모든 주소록 삭제
 		usersService.deleteAllUsers();			// 모든 유저 삭제
 
 		// 유저 생성

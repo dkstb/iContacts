@@ -58,7 +58,7 @@
 		WHERE contact_id = #{id}
 	</delete>
 
-	<!-- 전체 유저 삭제(테스트용) -->
+	<!-- 전체 유저 삭제 -->
 	<delete id="deleteAllContacts" parameterType="com.iContacts.bitschool.domain.Users">
 		DELETE FROM CONTACT
 		join user
@@ -67,4 +67,8 @@
 		where user.user_id = #{id}
 	</delete>
 
+	<!-- 전체 유저 삭제(테스트용) -->
+	<delete id="deleteAllContactsForTest">
+		DELETE FROM CONTACT
+	</delete>
 </mapper>

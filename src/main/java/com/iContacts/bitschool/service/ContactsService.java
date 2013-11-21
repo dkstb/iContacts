@@ -11,7 +11,8 @@ public interface ContactsService {
     public Contacts getContact(Contacts contacts) throws Exception;				// 상세 주소 조회
     public int updateContacts(Contacts contacts) throws Exception;
     public int deleteContacts(Contacts contacts) throws Exception;
+    public int deleteAllContacts(Users users) throws Exception;
     
     // 테스트용 전체 연락처 삭제
-    public int deleteAllContacts(Users users) throws Exception;
+    public int deleteAllContactsForTest() throws Exception;
 }

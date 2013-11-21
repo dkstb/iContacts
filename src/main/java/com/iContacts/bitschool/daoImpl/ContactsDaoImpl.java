@@ -41,9 +41,14 @@ public class ContactsDaoImpl extends SqlSessionDaoSupport implements ContactsDao
 		return (Integer)getSqlSession().delete("com.iContacts.bitschool.dao.ContactsDao.deleteContacts", contacts);
 	}
 
-	@Override
-	public int deleteAllContacts() throws Exception {
-		return getSqlSession().delete("com.iContacts.bitschool.dao.ContactsDao.deleteAllContacts");
+	@Override	// 특정인 전체 주소 삭제
+	public int deleteAllContacts(Contacts contacts) throws Exception {
+		return getSqlSession().delete("com.iContacts.bitschool.dao.ContactsDao.deleteAllContacts", contacts);
+	}
+
+	@Override	// 테스트용 주소록 전체 삭제
+	public int deleteAllContactsForTest() {
+		return getSqlSession().delete("com.iContacts.bitschool.dao.ContactsDao.deleteAllContactsForTest");
 	}
 
 }

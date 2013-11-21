@@ -24,31 +24,27 @@
 	<select id="getUsers" resultMap="usersSelectMap"
 		parameterType="com.iContacts.bitschool.domain.Users">
 		SELECT * FROM USER
-		WHERE email = #{email}
+		WHERE user_id = #{id}
 	</select>
 
 	<!-- Update Users -->
 	<update id="updateUsers" parameterType="com.iContacts.bitschool.domain.Users">
-		UPDATE USERS
-		SET name=#name#, password=#password#, gender=#gender#, age=#age#,
-		profile_image=#profileImage#
-		WHERE user_no = #userNo#
+		UPDATE user set name= #{name}, email=#{email}, password=#{password}
+		WHERE user_id = #{id}
 	</update>
 
 	<!-- Delete Users -->
 	<delete id="deleteUsers" parameterType="com.iContacts.bitschool.domain.Users">
 		DELETE
 		FROM USER
-		WHERE email = #{email}
+		WHERE user_id = #{id}
 	</delete>
 
 	<!-- Check Users -->
 	<select id="checkUsers" resultMap="usersSelectMap"
 		parameterType="com.iContacts.bitschool.domain.Users">
-		SELECT user_no, email_id, password, name, gender, age, profile_image,
-		g_state
-		FROM USERS
-		WHERE email_id=#emailId#
+		SELECT * FROM USER
+		WHERE email=#{email}
 	</select>
 	
 	<!-- 전체 유저 삭제(테스트용) -->

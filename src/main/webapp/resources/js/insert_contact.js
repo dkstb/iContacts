@@ -1,6 +1,6 @@
 $(document).ready(function(){
         
-        $('#insert_contact').click(function(){
+		$(document).on('click', '#insert_contact', function(){
                 
                 // ajax 전송
                 $.ajax('/bitschool/ajax/insertContact.contact', {
@@ -18,6 +18,7 @@ $(document).ready(function(){
                         success:function(data){
                                 if(data.result=='success') {
                                     alert($('#contact_name').val() + '님이 추가되었습니다.');
+                                    location.reload();
                                 } else if (data.result=='nullname') {
                                 	alert('이름은 필수 항목입니다.');
                                 } else {

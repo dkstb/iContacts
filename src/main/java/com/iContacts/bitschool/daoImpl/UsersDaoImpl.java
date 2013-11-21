@@ -39,9 +39,9 @@ public class UsersDaoImpl extends SqlSessionDaoSupport implements UsersDao {
         	return getSqlSession().delete("com.iContacts.bitschool.dao.UsersDao.deleteAllUsers");
 		}
 
-		// 이메일 체크용.. 필요없으면 지우세요
+		// 이메일로 체크
         @Override
         public Users checkUsers(Users users) throws Exception {
-                return (Users)getSqlSession().selectOne("Users.checkUsers", users);
+                return (Users)getSqlSession().selectOne("com.iContacts.bitschool.dao.UsersDao.checkUsers", users);
         }
 }

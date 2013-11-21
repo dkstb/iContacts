@@ -48,8 +48,13 @@ public class ContactsServiceImpl extends SqlSessionDaoSupport implements
 	}
 
 	@Override
-	public int deleteAllContacts() throws Exception {
-		return contactsDao.deleteAllContacts();
+	public int deleteAllContacts(Contacts contacts) throws Exception {
+		return contactsDao.deleteAllContacts(contacts);
+	}
+
+	@Override	// 테스트용 주소록 전체 삭제
+	public int deleteAllContactsForTest() throws Exception {
+		return contactsDao.deleteAllContactsForTest();
 	}
 
 	

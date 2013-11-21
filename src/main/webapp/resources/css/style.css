@@ -117,7 +117,11 @@ footer {
 }
 @media (min-width: 980px) and (max-width: 1199px) {
 	
-
+	.contacts-list button {
+		margin-top : 10px;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
 	.contacts_main footer{
 		visibility:hidden;
 	}
@@ -132,6 +136,11 @@ footer {
 	}
 	.container.text-center h1 {
 		padding-top: 40px;
+	}
+	.contacts-list button {
+		margin-top : 10px;
+		padding-right: 0px;
+		padding-left: 0px;
 	}
 	.contacts_main footer{
 		visibility:hidden;

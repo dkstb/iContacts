@@ -67,7 +67,7 @@ public class UsersController {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 
 		Users dbUsers = new Users();
-		dbUsers = (Users) usersService.getUsers(users);
+		dbUsers = (Users) usersService.checkUsers(users);
 		System.out.println("db 후:" + dbUsers);
 
 		if (dbUsers == null) {
@@ -100,7 +100,7 @@ public class UsersController {
         HashMap<String, Object> map= new HashMap<String,Object>();
 
         Users dbUsers = new Users();
-        dbUsers = (Users)usersService.getUsers(users);
+        dbUsers = (Users)usersService.checkUsers(users);
         System.out.println("db 후:"+dbUsers);
         
         if(dbUsers == null) {
@@ -215,35 +215,5 @@ public class UsersController {
 		
 		return map;
     }
-        
-        
-        
-        
-        
-        
-        //ȸ��Ż��
-//        @RequestMapping("/deleteUsers.do")
-//        @ResponseBody
-//        public Object deleteUsers(HttpSession session, Users users, Guide guide) 
-//                        throws Exception {
-//                System.out.println("DeleteUsers Controller start...");
-//                
-//                //session userNo ��������
-//                users = (Users)session.getAttribute("users");
-//                System.out.println("session users ����: "+users);
-//
-//                
-//                users = (Users)usersService.getUsers(users);
-//                guide.setUserNo(users.getUserNo());
-//                
-//                joinGuideService.deleteGuide(guide);
-//                usersService.deleteUsers(users);
-//
-//                session.removeAttribute("users");
-//                HashMap<String, Object> map = new HashMap<String, Object>();
-//                map.put("result", "success");
-//                
-//                System.out.println("DeleteUsers Controller end...");
-//                return map;
-//        }
+
 }

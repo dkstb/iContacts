@@ -46,7 +46,7 @@ public class UsersServiceImpl implements UsersService {
         	return usersDao.deleteAllUsers();
 		}
 
-		// �̸��� ���̵�θ� ���� üũ
+		// 이메일로 체크
         @Override
         public Users checkUsers(Users users) throws Exception {
                 return (Users)usersDao.checkUsers(users);

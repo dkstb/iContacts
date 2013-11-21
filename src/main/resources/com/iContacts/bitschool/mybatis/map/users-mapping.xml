@@ -24,7 +24,7 @@
 	<select id="getUsers" resultMap="usersSelectMap"
 		parameterType="com.iContacts.bitschool.domain.Users">
 		SELECT * FROM USER
-		WHERE email = #{email}
+		WHERE user_id = #{id}
 	</select>
 
 	<!-- Update Users -->
@@ -43,10 +43,8 @@
 	<!-- Check Users -->
 	<select id="checkUsers" resultMap="usersSelectMap"
 		parameterType="com.iContacts.bitschool.domain.Users">
-		SELECT user_no, email_id, password, name, gender, age, profile_image,
-		g_state
-		FROM USERS
-		WHERE email_id=#emailId#
+		SELECT * FROM USER
+		WHERE email=#{email}
 	</select>
 	
 	<!-- 전체 유저 삭제(테스트용) -->

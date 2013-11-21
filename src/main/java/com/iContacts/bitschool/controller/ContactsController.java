@@ -39,6 +39,7 @@ public class ContactsController {
             
             // 세션에서 로그인 한 유저 정보 가져오기
     		users = ((Users)session.getAttribute("users"));
+    		System.out.println("세션에서 가져온 유저 정보 : " + users);
     		
     		// 파라미터로 받은 주소록에 세션에 있는 유저 아이디 세팅
     		contacts.setUserId(users.getId());

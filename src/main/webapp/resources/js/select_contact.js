@@ -30,7 +30,7 @@ $(document).ready(function() {
 		$('#update_contact').remove();
 		$('#delete_contact').remove();
 		$('#detail_contact').append('<button id="delete_contact" type="button" class="btn btn-danger pull-right">Delete</button>')
-		.append('<button id="update_contact" type="button" class="btn btn-info pull-right">Edit</button>');
+		.append('<button id="update_contact" type="button" class="btn btn-info pull-right">Save</button>');
 	});
 	
 	// 주소록 추가 버튼 클릭시 save 버튼 생성

@@ -7,3 +7,11 @@
 	background-color: #fff;
 	border: 0
 }
+
+#join_btn.btn {
+	margin-left: -2px;
+}
+
+.help-inline {
+	font-size: 14px;
+}

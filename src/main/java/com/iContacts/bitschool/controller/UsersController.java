@@ -238,5 +238,28 @@ public class UsersController {
 		
 		return map;
     }
-
+    
+    //아이디(이메일) 중복 체크
+  	@RequestMapping("/checkEmail.contact")
+  	@ResponseBody
+  	public Object checkEmail(@ModelAttribute("users") Users users) throws Exception {
+  		System.out.println("checkEmail controller start....");
+  		
+  		System.out.println("db전:"+users);
+  		
+  		HashMap<String, Object> map= new HashMap<String,Object>();
+  		Users dbUsers = new Users();
+  		dbUsers = (Users)usersService.checkUsers(users);
+  		System.out.println("db후:"+dbUsers);
+  		
+  		if(dbUsers == null) {
+  			map.put("result", "success");
+  		} else {
+  			map.put("result", "fail");
+  		}
+  		
+  		System.out.println("checkEmail controller end....");
+  		return map;
+  	}
+    
 }

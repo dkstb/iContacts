@@ -21,6 +21,7 @@
 		<![endif]-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script src="resources/js/bootstrap.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 		<script>
 			$(document).ready(function(){
 				$('#header').load('header.html');
@@ -32,12 +33,12 @@
 		<div class="container text-center">
 			<form class="span4 offset4"> 
 				<fieldset>
-					<input type="text" size="30" id="input_name" placeholder="Name">
-					<input type="email" size="30" id="input_email" placeholder="Email">
-					<input type="password" size="31" id="input_password" placeholder="Password">
-					<input type="password" size="31" id="confirm_password" placeholder="Password Confirm">
+					<input type="text" id="input_name" placeholder="Name" required><span class="help-inline" id="name-help"></span>
+					<input type="email" id="input_email" placeholder="Email" required><span class="help-inline" id="email-help"></span>
+					<input type="password" id="input_password" placeholder="Password" required><span class="help-inline" id="password-help"></span>
+					<input type="password" id="confirm_password" placeholder="Password Confirm" required><span class="help-inline" id="confirm_password-help"></span>
 					<div>
-						<button type="button" id="join_btn" class="btn btn-success"><i class="fa fa-user fa-fw"></i> Sign up</button>
+						<button type="button" id="join_btn" class="btn btn-success" disabled><i class="fa fa-user fa-fw"></i> Sign up</button>
 					</div>
 				</fieldset>
 			</form>

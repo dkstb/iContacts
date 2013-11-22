@@ -36,9 +36,11 @@
 	<!-- Search ContactsList -->
 	<select id="getSearchContactsList" resultMap="contactsSelectMap"
 		parameterType="com.iContacts.bitschool.domain.Contacts">
-		SELECT name, contact_id FROM CONTACT
-		WHERE name like "%${name}%"
-		ORDER BY name ASC
+		SELECT c.name, c.contact_id 
+		FROM CONTACT c join user u
+		on c.user_id = u.user_id
+		WHERE c.name like "%${name}%" and c.user_id = #{userId} 
+		ORDER BY c.name ASC
 	</select>
 	
 	<!-- Read 상세 주소 (클릭) -->

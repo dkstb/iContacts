@@ -106,6 +106,11 @@ public class ContactsController {
             HashMap<String, Object> map= new HashMap<String,Object>();
             List<Contacts> contactList;
             
+            // 세션 유저 정보 체크
+            Users sessionUser = new Users();
+            sessionUser = (Users)session.getAttribute("users");
+            contacts.setUserId(sessionUser.getId());
+            
     		contactList = contactsService.getSearchContactsList(contacts);
     		
     		// 주소록 리스트 널체크

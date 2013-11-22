@@ -33,13 +33,13 @@
 		<div class="container text-center">
 			<form class="span4 offset4">
 				<fieldset>
-					<input type="text" id="name" placeholder="이름">
-					<input type="email" id=email  placeholder="이메일">
-					<input type="password" id="password" placeholder="비밀번호" >
-					<input type="password" id="passwordconfirm"	placeholder="비밀번호 확인" >
+					<input type="text" id="name" placeholder="이름" required><span class="help-inline" id="name-help"></span>
+					<input type="email" id="email"  placeholder="이메일" required><span class="help-inline" id="email-help"></span>
+					<input type="password" id="password" placeholder="비밀번호" required><span class="help-inline" id="password-help"></span>
+					<input type="password" id="passwordconfirm"	placeholder="비밀번호 확인" required><span class="help-inline" id="confirm_password-help"></span>
 					<input type="hidden" id="user_id">
 					<div class="form-actions">
-						<button type="button" id="save" class="btn btn-success"><i class="fa fa-check"></i> Save</button>
+						<button type="button" id="save" class="btn btn-success" disabled><i class="fa fa-check"></i> Save</button>
 						<button type="button" id="delete" class="btn btn-danger"><i class="fa fa-trash-o fa-lg"></i> Delete</button>
 					</div>
 				</fieldset>

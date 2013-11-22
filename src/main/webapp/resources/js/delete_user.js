@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+	
 	$('#delete').click(function() {
 		var result = confirm($('#name').val() + '을 정말로 삭제하겠습니까?');
 		if (result) {
@@ -23,7 +23,7 @@ $(document).ready(function() {
 			});
 
 		} else {
-			alert('삭제를 취소했습니다.')
+			alert('삭제를 취소했습니다.');
 
 		}
 

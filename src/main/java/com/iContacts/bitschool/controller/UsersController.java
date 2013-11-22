@@ -195,16 +195,26 @@ public class UsersController {
         		dbUsers = (Users) usersService.checkUsers(users);
         		System.out.println("db 후:" + dbUsers);
         		
+        		Users sessionUser = new Users();
+          		sessionUser = (Users) session.getAttribute("users");
+        		
         		if (dbUsers == null) {
         			usersService.updateUsers(users);
         			map.put("result", "success");
 
         			// 로그인 상태 만들기 (세션 유지)
-        			Users sessionUsers = new Users();
-        			sessionUsers = usersService.getUsers(users);	// 세션에 담을 유저 정보 디비에서 가져옴.
-        			session.setAttribute("users", sessionUsers);
-        			map.put("users", sessionUsers);
-        			
+        			sessionUser = usersService.getUsers(users);	// 세션에 담을 유저 정보 디비에서 가져옴.
+        			session.setAttribute("users", sessionUser);
+        			map.put("users", sessionUser);
+        		} else if (dbUsers.getEmail().equals(sessionUser.getEmail())){
+        			usersService.updateUsers(users);
+        			System.out.println("이메일 수정 없음.");
+        	  		map.put("result", "same");
+        	  		
+        	  		// 로그인 상태 만들기 (세션 유지)
+        			sessionUser = usersService.getUsers(users);	// 세션에 담을 유저 정보 디비에서 가져옴.
+        			session.setAttribute("users", sessionUser);
+        			map.put("users", sessionUser);
         		} else {
         			map.put("result", "fail");
         		}
@@ -257,6 +267,36 @@ public class UsersController {
   		} else {
   			map.put("result", "fail");
   		}
+  		
+  		System.out.println("checkEmail controller end....");
+  		return map;
+  	}
+  	
+  	// 업데이트 이메일 체크
+  	@RequestMapping("/updateEmail.contact")
+  	@ResponseBody
+  	public Object updateEmail(@ModelAttribute("users") Users users, 
+  			HttpSession httpSession) throws Exception {
+  		System.out.println("checkEmail controller start....");
+  		
+  		System.out.println("db전:"+users);
+  		
+  		HashMap<String, Object> map= new HashMap<String,Object>();
+  		
+  		Users dbUsers = new Users();
+  		dbUsers = (Users)usersService.checkUsers(users);
+  		System.out.println("db후:"+dbUsers);
+  		
+  		Users sessionUser = new Users();
+  		sessionUser = (Users) httpSession.getAttribute("users");
+  		
+  		if(dbUsers == null) {
+  			map.put("result", "success");
+  		} else if (dbUsers.getEmail().equals(sessionUser.getEmail())){
+  			map.put("result", "same");
+  		} else {
+  			map.put("result", "fail");
+		}
   		
   		System.out.println("checkEmail controller end....");
   		return map;

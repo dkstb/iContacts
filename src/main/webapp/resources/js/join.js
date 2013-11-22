@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 		if (bValid) {
 			nameValid=true;
-			trueWork(nameHelp);
+			trueWork();
 		}else{
 			$('#join_btn').attr('disabled', 'disabled');
 		}
@@ -41,7 +41,7 @@ $(document).ready(function() {
 
 		if (bValid) {
 			// ajax loading image
-			trueWork(emailHelp);
+			trueWork();
 			
 			// 이메일  정보 서버 전송
 			$.ajax('/bitschool/ajax/checkEmail.contact', {
@@ -77,7 +77,7 @@ $(document).ready(function() {
 
 		if (bValid) {
 			// ajax loading image
-			trueWork(emailHelp);
+			trueWork();
 			
 			// 이메일  정보 서버 전송
 			$.ajax('/bitschool/ajax/checkEmail.contact', {
@@ -114,7 +114,7 @@ $(document).ready(function() {
 		
 		if (bValid) {
 			passwordValid = true;
-			trueWork(passwordHelp);
+			trueWork();
 		}else{
 			$('#join_btn').attr('disabled', 'disabled');
 		}
@@ -132,7 +132,7 @@ $(document).ready(function() {
 		
 		if (bValid) {
 			confirmPasswordValid = true;
-			trueWork(confirmPasswordHelp);
+			trueWork();
 		}else{
 			$('#join_btn').attr('disabled', 'disabled');
 		}

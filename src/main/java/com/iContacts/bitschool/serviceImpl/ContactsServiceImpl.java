@@ -32,6 +32,11 @@ public class ContactsServiceImpl extends SqlSessionDaoSupport implements
 		return contactsDao.getContactsList(contacts);
 	}
 	
+	@Override	// 주소록 리스트 가져오기
+	public List<Contacts> getSearchContactsList(Contacts contacts) throws Exception {
+		return contactsDao.getSearchContactsList(contacts);
+	}
+	
 	@Override	// 상세 주소 조회
 	public Contacts getContact(Contacts contacts) throws Exception {
 		return contactsDao.getContact(contacts);

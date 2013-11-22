@@ -97,6 +97,31 @@ public class ContactsController {
     		return map;
         }
         
+        // 주소록 검색 조회
+        @RequestMapping("/searchContactList.contact")
+        @ResponseBody
+        public Object searchContactList(@ModelAttribute("contacts") Contacts contacts, Users users,
+                        HttpSession session) throws Exception {
+            System.out.println("SearchContactList controller start....");
+            HashMap<String, Object> map= new HashMap<String,Object>();
+            List<Contacts> contactList;
+            
+    		contactList = contactsService.getSearchContactsList(contacts);
+    		
+    		// 주소록 리스트 널체크
+    		if (contactList.size()==0) {
+				map.put("result", "noContacts");
+				System.out.println("주소록 하나도 없다고 알림.");
+				return map;
+			}
+
+    		System.out.println("주소록 리스트 : " + contactList);
+    		map.put("result", "success");
+    		map.put("contactList", contactList);
+    		
+    		return map;
+        }
+        
         // 상세 주소 조회
         @RequestMapping("/selectContact.contact")
         @ResponseBody

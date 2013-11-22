@@ -33,6 +33,14 @@
 		ORDER BY name ASC
 	</select>
 	
+	<!-- Search ContactsList -->
+	<select id="getSearchContactsList" resultMap="contactsSelectMap"
+		parameterType="com.iContacts.bitschool.domain.Contacts">
+		SELECT name, contact_id FROM CONTACT
+		WHERE name like "%${name}%"
+		ORDER BY name ASC
+	</select>
+	
 	<!-- Read 상세 주소 (클릭) -->
 	<select id="getContact" resultMap="contactsSelectMap" 
 	parameterType="com.iContacts.bitschool.domain.Contacts">

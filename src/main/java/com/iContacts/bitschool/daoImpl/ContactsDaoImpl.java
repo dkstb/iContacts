@@ -26,6 +26,12 @@ public class ContactsDaoImpl extends SqlSessionDaoSupport implements ContactsDao
 		return (List<Contacts>)getSqlSession().selectList("com.iContacts.bitschool.dao.ContactsDao.getContactsList", contacts);
 	}
 	
+	@SuppressWarnings("unchecked")
+	@Override	// 주소록 검색 리스트 가져오기
+	public List<Contacts> getSearchContactsList(Contacts contacts) throws Exception {
+		return (List<Contacts>)getSqlSession().selectList("com.iContacts.bitschool.dao.ContactsDao.getSearchContactsList", contacts);
+	}
+	
 	@Override	// 상세 주소 조회
 	public Contacts getContact(Contacts contacts) throws Exception {
 		return (Contacts)getSqlSession().selectOne("com.iContacts.bitschool.dao.ContactsDao.getContact", contacts);

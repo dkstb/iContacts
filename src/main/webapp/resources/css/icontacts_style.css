@@ -1,5 +1,13 @@
 @CHARSET "UTF-8";
 
+.contacts-list button {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+input, textarea, .uneditable-input {
+	width: 170px;
+}
 .contacts_main {
 	background-color: #fff;
 	margin-top: 80px;
@@ -22,11 +30,6 @@ thead {
 	padding-left: 20px;
 	padding-right: 20px;
 	background-color:#57A957;
-}
-
-.contacts-list button {
-	padding-right: 31px;
-	padding-left: 31px;
 }
 
 .contacts_main .table {

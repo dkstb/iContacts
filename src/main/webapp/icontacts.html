@@ -36,8 +36,11 @@
 					<div class="row">
 						<div class="span3 contacts-list">
 							<legend><i class="fa fa-home fa-fw"></i> All Contacts</legend>
-						    <input type="text" class="input-medium search-query" placeholder="Search">
-						    <button id="plus_contact" class="btn"> <i class="icon-plus"></i> </button>
+							<div class="input-append">
+						    	<input id="search_name" type="text"  class="appendedInputButtons" placeholder="Search">
+						    	<button id="search_btn" class="btn"><i class="fa fa-search"></i> </button>
+						    	<button id="plus_contact" class="btn"><i class="icon-plus"></i> </button>
+						    </div>
 							<table id="contact_list" class="table table-bordered table-hover">
 							</table>
 						</div>
@@ -70,6 +73,7 @@
 	    </footer>
 	    <script src="resources/js/insert_contact.js"></script>
 	    <script src="resources/js/select_contact_list.js"></script>
+	    <script src="resources/js/search_contact_list.js"></script>
 	    <script src="resources/js/select_contact.js"></script>
 	    <script src="resources/js/update_contact.js"></script>
 	    <script src="resources/js/delete_contact.js"></script>

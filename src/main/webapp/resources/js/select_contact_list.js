@@ -18,6 +18,8 @@ $(document).ready(function() {
 							.text(contactList[i].name))
 							.appendTo('#contact_list');
 				}
+				var objDiv = document.getElementById("contact_id");
+				objDiv.srollTop = objDiv.scrollHeight;
 				
 				// 주소록 리스트 첫줄 상세 주소 조회
 				$.ajax('/bitschool/ajax/selectContact.contact', {

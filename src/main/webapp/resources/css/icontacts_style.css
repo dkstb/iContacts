@@ -4,34 +4,31 @@
 	padding-right: 15px;
 	padding-left: 15px;
 }
+.contacts_main .scrolllist {
+	height:450px; 
+	text-overflow:ellipsis; 
+	overflow-x:hidden; 
+	overflow-y:scroll; 
+	overflow:auto;
+}
 
 .contacts_main {
 	background-color: #fff;
 	margin-top: 80px;
 	margin-bottom: 50px;
 }
-
 thead {
 	background-color: #ddd;
 }
 .table-hover tbody tr:hover>td,.table-hover tbody tr:hover>th {
 	background-color: #eee;
 }
-
 .contacts_main .pull-right {
 	margin-left: 10px;
 }
-
 .contacts_main footer {
 	height: 40px;
 	padding-left: 20px;
 	padding-right: 20px;
 	background-color:#57A957;
 }
-
-.contacts_main .table {
-	width: 100%;
-	margin-bottom: 20px;
-	margin-top: 10px;
-}
-

@@ -8,16 +8,6 @@ body {
 
 /*********************** iContacts 시작 ***************************/
 
-.navbar .brand {
-	float: left;
-	display: block;
-	padding: 10px 20px 10px;
-	margin-left: -20px;
-	font-size: 20px;
-	font-weight: 200;
-	color: #D88A14;
-	text-shadow: 0 1px 0 #6D460C;
-}
 
 .navbar .nav > li >a {
 	float: none;
@@ -65,27 +55,3 @@ thead {
 .contacts-main .pull-right {
 	margin-left: 10px;
 }
-
-/*********************** iContacts 끝 ***************************/
-
-/*********************** 미디어 쿼리 시작 *************************/
-/* Large desktop */
-@media (min-width: 1200px) {
-}
-@media (min-width: 980px) and (max-width: 1199px) {
-}
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-}
-/* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-}
-/* Landscape phones and down */
-@media (max-width: 480px) {
-
-}
-/*********************** 미디어 쿼리 끝 *************************/
-
-/*************************** IE 7,8 버전 스타일시트 시작 ******************************/
-
-/*************************** IE 7,8 버전 스타일시트 종료 ******************************/

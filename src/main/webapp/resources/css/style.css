@@ -19,6 +19,10 @@ body {
 	margin-left: 10px;
 }
 
+input, textarea, .uneditable-input {
+	width: 170px;
+}
+
 /* 공통 가운데 컨테이너 박스 */
 .container.text-center {
 	padding-top: 85px;
@@ -104,8 +108,14 @@ footer {
 /*********************** 미디어 쿼리 시작 *************************/
 /* Large desktop */
 @media (min-width: 1200px) {
+	
 	.offset4 {
 		margin-left: 400px;
+	}
+	
+	.container-fluid {
+		padding-right: 20px;
+		padding-left: 20px;
 	}
 	.contacts_main footer{
 		position: fixed;
@@ -116,10 +126,13 @@ footer {
 }
 @media (min-width: 980px) and (max-width: 1199px) {
 	
-	.contacts-list button {
-		margin-top : 10px;
-		padding-right: 0px;
-		padding-left: 0px;
+	.container-fluid {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+	
+	input, textarea, .uneditable-input {
+		width: 120px;
 	}
 	.contacts_main footer{
 		visibility:hidden;
@@ -137,11 +150,16 @@ footer {
 	.container.text-center h1 {
 		padding-top: 40px;
 	}
-	.contacts-list button {
-		margin-top : 10px;
-		padding-right: 0px;
-		padding-left: 0px;
+	
+	input, textarea, .uneditable-input {
+		width: 70px;
 	}
+	
+	.container-fluid {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+	
 	.contacts_main footer{
 		visibility:hidden;
 	}
@@ -152,17 +170,20 @@ footer {
 }
 /* Landscape phone to portrait tablet */
 @media (min-width: 479px) and (max-width: 767px) {
+	
 	.navbar-fixed-top, .navbar-fixed-bottom {
 		position: fixed;
 	}
 	
-	/*로그인 버튼 고정*/
-	.navbar .btn, .navbar .btn-group {
-		margin-right: 20px;
+	.container.text-center h1 {
+		padding-top: 40px;
 	}
-	.navbar .brand {
-    	margin-left: 20px;
+	
+	.container-fluid {
+		padding-right: 20px;
+		padding-left: 20px;
 	}
+	
 	.container.text-center h1 {
 		padding-top: 40px;
 	}
@@ -176,13 +197,11 @@ footer {
 /* Landscape phones and down */
 @media (max-width: 480px) {
 	
-	/*로그인 버튼 고정*/
-	.navbar .btn, .navbar .btn-group {
-		margin-right: 20px;
+	.container-fluid {
+		padding-right: 20px;
+		padding-left: 20px;
 	}
-	.navbar .brand {
-    	margin-left: 20px;
-	}
+	
 	.navbar-fixed-top, .navbar-fixed-bottom {
 		position: fixed;
 	}
